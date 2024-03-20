@@ -1,0 +1,97 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:core="sap.ui.core"
+	xmlns:uxap="sap.uxap">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.DefaultHeaderActions
+        @description: This fragment describes the detail view action default buttons. 
+    -->
+	<template:if
+		test="{parts:[{path: 'parameter>/defaultButtons/CopyDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+		<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/CopyDetailPage}" text="{i18n>COPY_BUTTON}"
+			press="._eventHandler.handleCopyAction" visible="{= ${DisplayMode} &amp;&amp; ${view>/level} === 1 &amp;&amp; ${Persistencestatus} === 2 }"
+			hideText="false" importance="Medium" type="Transparent"/>
+	</template:if>
+	
+	<!--
+		Delete Button with shortcut
+	-->
+	<template:if test="{= ${parameter>/configuration/commandExecution} === true}">
+		<template:then>
+		 	<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/DeleteDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/DeleteDetailPage}" text="{i18n>DELETE_BUTTON}"
+					press="cmd:Delete"
+					visible="{path: 'entityType>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isEntityDeletable'}" hideText="false"
+					importance="Medium" type="Transparent">
+					<uxap:customData>
+						<core:CustomData key="entityName" value="{path: 'header>TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+					</uxap:customData>
+				</uxap:ObjectPageHeaderActionButton>
+			</template:if>
+		</template:then>
+		<template:else>
+		 	<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/DeleteDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/DeleteDetailPage}" text="{i18n>DELETE_BUTTON}"
+					press="._eventHandler.handleDeleteAction"
+					visible="{path: 'entityType>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isEntityDeletable'}" hideText="false"
+					importance="Medium" type="Transparent">
+					<uxap:customData>
+						<core:CustomData key="entityName" value="{path: 'header>TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+					</uxap:customData>
+				</uxap:ObjectPageHeaderActionButton>
+			</template:if>
+		</template:else>
+	</template:if>
+
+	<!--
+		Export Button with shortcut
+	-->
+	<template:if test="{= ${parameter>/configuration/commandExecution} === true}">
+		<template:then>
+			<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/ExportDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/ExportDetailPage}" text="{i18n>EXPORT_BUTTON}"
+					tooltip="{i18n>EXPORT_BUTTON}" icon="sap-icon://pdf-attachment" press="cmd:Export"
+					visible="{= ${view>/level} === 1 }" importance="Medium" type="Transparent"/>
+			</template:if>
+		</template:then>
+		<template:else>
+			<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/ExportDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/ExportDetailPage}" text="{i18n>EXPORT_BUTTON}"
+					tooltip="{i18n>EXPORT_BUTTON}" icon="sap-icon://pdf-attachment" press="._eventHandler.handleExportAction"
+					visible="{= ${view>/level} === 1 }" importance="Medium" type="Transparent"/>
+			</template:if>
+		</template:else>
+	</template:if>
+	
+	<!--
+		Share Button with shortcut
+	-->
+	<template:if test="{= ${parameter>/configuration/commandExecution} === true}">
+		<template:then>
+			<template:if
+		test="{parts:[{path: 'parameter>/defaultButtons/ShareDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+		<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/ShareDetailPage}" icon="sap-icon://action" type="Transparent"
+			press="cmd:Share" tooltip="{i18n>SHARE_BUTTON}" text="{i18n>SHARE_BUTTON}" importance="Medium"
+			visible="{= (${view>/level} === 1 &amp;&amp; !${_global>/fcl/columnsVisibility/endColumn}) || (${view>/level} > 1 &amp;&amp; ${_global>/fcl/columnsVisibility/endColumn}) }"/>
+	</template:if>
+		</template:then>
+		<template:else>
+			<template:if
+		test="{parts:[{path: 'parameter>/defaultButtons/ShareDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+		<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/ShareDetailPage}" icon="sap-icon://action" type="Transparent"
+			press="._eventHandler.onShareActionButtonPress" tooltip="{i18n>SHARE_BUTTON}" text="{i18n>SHARE_BUTTON}" importance="Medium"
+			visible="{= (${view>/level} === 1 &amp;&amp; !${_global>/fcl/columnsVisibility/endColumn}) || (${view>/level} > 1 &amp;&amp; ${_global>/fcl/columnsVisibility/endColumn}) }"/>
+	</template:if>
+		</template:else>
+	</template:if>
+				
+				
+	
+</core:FragmentDefinition>

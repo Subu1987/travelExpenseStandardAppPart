@@ -1,0 +1,65 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.CRUDActionButton
+        @description: This fragment describes CRUD action buttons
+    -->
+	<template:if test="{= ${listEntitySet>Org.OData.Capabilities.V1.DeleteRestrictions/Deletable/Bool} !== 'false' }">
+		<Button
+			id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::deleteEntry{= ${listEntitySet>name}}::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+			text="{i18n>DELETE_BUTTON}" press="._eventHandler.handleDeleteAction" type="Transparent" enabled="false" visible="{= !${DisplayMode} }">
+			<customData>
+				<core:CustomData key="entityName"
+					value="{path: 'listEntityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+			</customData>
+		</Button>
+	</template:if>
+	<template:if
+		test="{path:'listEntitySet>Org.OData.Capabilities.V1.InsertRestrictions', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getEntityCreatable'}">
+		<template:if
+			test="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isSourceEntitySearchNavigationCreatable'}">
+			<template:then>
+				<OverflowToolbarButton
+					id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::addSearchableEntries{= ${listEntitySet>name}}::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+					visible="{parts: [{path: 'facet>Target/AnnotationPath'}, {path: 'listEntitySet>'}, {path: 'entityType>'} ], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSourceEntitySearchNavigationCreatableVisibility'}"
+					icon="sap-icon://add" press="._eventHandler.handleCreateActionSearcheableList" tooltip="{i18n>ADD_BUTTON}">
+					<customData>
+						<core:CustomData key="targetEntitySettings"
+							value="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getTargetEntitySettings'}"/>
+						<core:CustomData key="targetEntityProperties"
+							value="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getTargetEntityProperties'}"/>
+					</customData>
+				</OverflowToolbarButton>
+			</template:then>
+			<template:elseif
+				test="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isSourceEntityNavigationCreatable'}">
+				<OverflowToolbarButton
+					id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::addEntries{= ${listEntitySet>name}}::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+					visible="{parts: [{path: 'facet>Target/AnnotationPath'}, {path: 'listEntitySet>'}, {path: 'entityType>'} ], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSourceEntityNavigationCreatableVisibility'}"
+					icon="sap-icon://add" press="._eventHandler.handleCreateActionList" tooltip="{i18n>ADD_BUTTON}">
+					<customData>
+						<core:CustomData key="targetEntitySettings"
+							value="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getTargetEntitySettings'}"/>
+						<core:CustomData key="targetEntityProperties"
+							value="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getTargetEntityProperties'}"/>
+					</customData>
+				</OverflowToolbarButton>
+			</template:elseif>
+			<template:else>
+				<OverflowToolbarButton
+					id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::addEntry{= ${listEntitySet>name}}::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+					visible="{parts: [{path: 'facet>Target/AnnotationPath'}, {path: 'listEntitySet>'}, {path: 'entityType>'} ], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSourceEntityCreatableVisibility'}"
+					icon="sap-icon://add" press="._eventHandler.handleCreateAction" tooltip="{i18n>ADD_BUTTON}">
+					<customData>
+						<core:CustomData key="entityType" value="{path: 'listEntitySet>name'}"/>
+					</customData>
+				</OverflowToolbarButton>
+			</template:else>
+		</template:if>
+	</template:if>
+</core:FragmentDefinition>

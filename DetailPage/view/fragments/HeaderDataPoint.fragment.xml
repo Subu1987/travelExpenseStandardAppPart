@@ -1,0 +1,17 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderDataPoint
+        @description: This fragment describes the header data point.
+    -->
+	<VBox
+		id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::DataPoint"
+		displayInline="true" class="sapSmartTemplatesObjectPageDataPoint">
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderDataPointContent" type="XML"/>
+	</VBox>
+</core:FragmentDefinition>

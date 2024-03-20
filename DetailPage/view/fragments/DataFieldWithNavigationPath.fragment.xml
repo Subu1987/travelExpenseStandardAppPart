@@ -1,0 +1,40 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:sfi="sap.ui.comp.smartfield" xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" xmlns:sfo="sap.ui.comp.smartform"
+	xmlns:core="sap.ui.core">
+	<!-- @classdesc @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.DataFieldWithNavigationPath.fragment.xml
+		@description: This fragment contains label value pairs for the smart form
+		derived from UI.DataFields @param {Collection(UI.DataField)} [dataField] -->
+	<template:if test="{= ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+		<template:then>
+			<sfo:GroupElement id="{facet>ID/String}::DataFieldWithNav::{dataField>Value/Path}::GroupElement">
+				<sfi:SmartField id="{facet>ID/String}::DataFieldWithNav::{dataField>Value/Path}::Field"
+					value="{path: 'target>Value', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" fetchValueListReadOnly="false">
+					<sfi:configuration>
+						
+					</sfi:configuration>
+				</sfi:SmartField>
+			</sfo:GroupElement>
+		</template:then>
+		<template:else>
+			<template:with path="dataField>Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldValue">
+				<sfo:GroupElement id="sap.fin.travel.lib.reuse.DetailPage--{firstLevelFacet>ID/String}::{dataField>Value/Path}::GroupElement">
+					<Label id="sap.fin.travel.lib.reuse.DetailPage--{firstLevelFacet>ID/String}::{dataField>Value/Path}::SelectLabel"
+						text="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getDataFieldLabel'}"
+						labelFor="sap.fin.travel.lib.reuse.DetailPage--{firstLevelFacet>ID/String}::{dataField>Value/Path}::Select"/>
+					<Select id="sap.fin.travel.lib.reuse.DetailPage--{firstLevelFacet>ID/String}::{dataField>Value/Path}::Select" forceSelection="false"
+						enabled="{parts: [{path: 'entityType>'}, {path: 'dataField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getEnabledMode'}"
+						selectedKey="{path: 'dataField>Value', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"
+						items="{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getDataFieldTarget'}">
+						<core:Item key="{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getKeyItem'}"
+							text="{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getDescriptionItem'}"/>
+					</Select>
+				</sfo:GroupElement>
+			</template:with>
+		</template:else>
+	</template:if>
+</core:FragmentDefinition>

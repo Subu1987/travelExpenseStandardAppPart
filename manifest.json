@@ -1,0 +1,78 @@
+{
+	"_version": "1.3.0",
+
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "sap.fin.travel.lib.reuse",
+		"type": "library",
+		"embeds": ["ListPage", "DetailPage"],
+		"i18n": "messagebundle.properties",
+		"applicationVersion": {
+			"version": "2.0.49"
+		},
+		"title": "{{TITLE}}",
+		"description": "{{DESCRIPTION}}",
+		"ach": "FI-FIO-TV",
+		"resources": "resources.json",
+		"offline": false
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": false
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize",
+			"sap_bluecrystal"
+		]
+	},
+
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {
+					"minUI5Version": "1.30.0"
+				},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.f": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {},
+				"sap.ui.unified": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "i18n/i18n.properties"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		}
+
+	},
+
+	"sap.platform.hcp": {
+		"_version": "1.2.0",
+		"uri": ""
+	},
+
+	"sap.fiori": {
+		"_version": "1.1.0",
+		"registrationIds": ["F3070"],
+		"archeType": "reusecomponent"
+	}
+
+}

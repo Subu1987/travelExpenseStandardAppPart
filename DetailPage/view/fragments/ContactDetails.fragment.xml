@@ -1,0 +1,22 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<QuickView class="sapSmartTemplatesObjectPageContactsQuickView" placement="Auto" >
+		<QuickViewPage header="{i18n>CONTACT_INFO}" icon="sap-icon://person-placeholder" title="{Name}" description="{Role}" >
+			<QuickViewGroup heading="{i18n>CONTACT_DETAILS}">
+				<QuickViewGroupElement label="{i18n>CONTACT_JOB_TITLE}" type="text" value="{Title}"/>
+				<QuickViewGroupElement label="{i18n>CONTACT_DEPARTMENT}" type="text" value="{Department}"/>
+				<QuickViewGroupElement label="{i18n>CONTACT_EMAIL}" type="email" value="{Email}"/>
+				<QuickViewGroupElement label="{i18n>CONTACT_PHONE}" type="phone" value="{Phone}"/>
+				<QuickViewGroupElement label="{i18n>CONTACT_MOBILE}" type="mobile" value="{Mobile}"/>
+			</QuickViewGroup>
+			<QuickViewGroup heading="{i18n>CONTACT_COMPANY}">
+				<QuickViewGroupElement label="{i18n>COMPANY_NAME}" type="text" value="{Company}"/>
+				<QuickViewGroupElement label="{i18n>COMPANY_ADDRESS}" type="text" value="{Address}"/>
+			</QuickViewGroup>
+		</QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

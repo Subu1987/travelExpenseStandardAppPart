@@ -1,0 +1,23 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap">
+	<Breadcrumbs>
+		<!--<template:repeat list="{parameter>/breadCrumb}" var="breadCrumb">
+			<template:repeat list="{entitySet>/dataServices/schema/0/entityContainer/0/entitySet}" var="tmpEntitySet">
+				<template:if
+					test="{parts: [{path: 'tmpEntitySet>'}, {path: 'breadCrumb>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.matchesBreadCrumb'}">
+					<template:with path="tmpEntitySet>entityType" helper="sap.ui.model.odata.AnnotationHelper.gotoEntityType" var="tmpEntityType">
+						<Link
+							text="{parts : [{path: 'tmpEntityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value'}, {path: 'tmpEntityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName'}] , formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.buildBreadCrumbExpression'}"
+							press="._eventHandler.onBreadCrumbUrlPressed" visible="{= ${_global>/fcl/isFullScreen} }"></Link>
+					</template:with>
+				</template:if>
+			</template:repeat>
+		</template:repeat>
+		-->
+	</Breadcrumbs>
+</core:FragmentDefinition>

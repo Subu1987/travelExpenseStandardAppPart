@@ -1,0 +1,38 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+	<smartfilterbar:SmartFilterBar id="listPageFilterBar" entitySet="{parameter>/entitySet}" enableBasicSearch="true"
+		considerSelectionVariants="true" liveMode="false" persistencyKey="SmartFilterExplored" useToolbar="false"
+		assignedFiltersChanged="._eventHandler.onAssignedFiltersChanged" search="._eventHandler.handleFilterBarSearchPressed">
+		<smartfilterbar:controlConfiguration>
+			<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.SelectionFields}" var="selectionField">
+				<template:if
+					test="{parts: [{path: 'workingContext>selectionItem'}, {path: 'selectionField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isSelectionFieldCandidate'}">
+					<template:then>
+						<smartfilterbar:ControlConfiguration id="{selectionField>PropertyPath}::Control::Configuration::Action" key="{selectionField>PropertyPath}"
+							visibleInAdvancedArea="true" conditionType="sap.ui.comp.config.condition.DateRangeType">
+							<smartfilterbar:customData>
+								<core:CustomData key="conditionType" value="DateRangeType"/>
+							</smartfilterbar:customData>
+						</smartfilterbar:ControlConfiguration>
+					</template:then>
+					<template:else>
+						<smartfilterbar:ControlConfiguration id="{selectionField>PropertyPath}::Control::Configuration::Action" key="{selectionField>PropertyPath}"
+							visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"/>
+					</template:else>
+				</template:if>
+			</template:repeat>
+		</smartfilterbar:controlConfiguration>
+		<smartfilterbar:customData>
+			<core:CustomData key="defaultDropDownDisplayBehaviour" value="descriptionOnly"/>
+			<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}'/>
+		</smartfilterbar:customData>
+		<smartfilterbar:layoutData>
+			<FlexItemData shrinkFactor="0"/>
+		</smartfilterbar:layoutData>
+	</smartfilterbar:SmartFilterBar>
+</core:FragmentDefinition>

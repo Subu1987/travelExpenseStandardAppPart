@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sfi="sap.ui.comp.smartfield">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderDataPointContent
+        @description: This fragment describes the header data point content.
+    -->
+	<sfi:SmartLabel
+		id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataPoint'}::Label"
+		labelFor="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataPoint'}::Value"
+		class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+	<sfi:SmartField
+		id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataPoint'}::Value"
+		contextEditable="false" uomEditable="false" enabled="true" clientSideMandatoryCheck="false"
+		value="{parts: [{path: 'dataPoint>Value'}, {path: 'entitySet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpand'}"
+		class="sapSmartTemplatesObjectPageDataPointValue {= ${dataPoint>Value/EdmType} === 'Edm.Byte' || ${dataPoint>Value/EdmType} === 'Edm.Decimal' || ${dataPoint>Value/EdmType} === 'Edm.Double' || ${dataPoint>Value/EdmType} === 'Edm.Float' || ${dataPoint>Value/EdmType} === 'Edm.Int16' || ${dataPoint>Value/EdmType} === 'Edm.Int32' || ${dataPoint>Value/EdmType} === 'Edm.Int64' || ${dataPoint>Value/EdmType} === 'Edm.SByte' ? 'sapSmartTemplatesObjectPageDataPointNumericValue' : 'sapSmartTemplatesObjectPageDataPointTextualValue'}"
+		textLabel="{path: 'dataPoint>Title', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpandSimple'}"
+		fetchValueListReadOnly="false">
+		<template:if test="{= ${dataPoint>Criticality} }">
+			<sfi:controlProposal>
+				<sfi:ControlProposal
+					id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataPoint'}::Ctrl">
+					<sfi:objectStatus>
+						<sfi:ObjectStatus
+							id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataPoint>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataPoint'}::ObjSts"
+							criticality="{path: 'dataPoint>Criticality', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'}"
+							criticalityRepresentationType="{path: 'dataPoint>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveCriticalityRepresentation'}"/>
+					</sfi:objectStatus>
+				</sfi:ControlProposal>
+			</sfi:controlProposal>
+		</template:if>
+	</sfi:SmartField>
+</core:FragmentDefinition>

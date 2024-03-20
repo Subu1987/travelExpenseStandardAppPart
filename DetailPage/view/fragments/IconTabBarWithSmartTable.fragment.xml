@@ -1,0 +1,30 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:build="sap.build">
+	<template:repeat list="{parameter>/settings}" var="section">
+		<template:if
+			test="{parts: [{path: 'facet>'}, {path: 'section>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isCurrentSection'}">
+			<IconTabBar id="{path: 'section>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSegmentedId'}" expandable="false"
+				stretchContentHeight="false" headerMode="Inline" select="._eventHandler.onIconTabBarSelect"
+				selectedKey="{path: 'section>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getIconTabBarSelectedKey'}"
+				backgroundDesign="Transparent" headerBackgroundDesign="Transparent">
+				<customData>
+					<core:CustomData key="entitySet" value="{path: 'listEntitySet>name'}"/>
+				</customData>
+				<items>
+					<template:repeat list="{section>quickVariantSelection/variants}" var="variant">
+						<IconTabFilter id="{path: 'section>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSegmentedId'}::{variant>key}"
+							key="{variant>key}" enabled="{path: 'variant>enabled', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getEnabledIconTab'}"
+							text="{path: 'variant>key', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}">
+							<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartTable" type="XML"/>
+						</IconTabFilter>
+					</template:repeat>
+				</items>
+			</IconTabBar>
+		</template:if>
+	</template:repeat>
+</core:FragmentDefinition> 

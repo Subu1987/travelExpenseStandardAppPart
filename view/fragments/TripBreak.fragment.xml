@@ -1,0 +1,53 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<Dialog xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form" showHeader="false" title="{i18n>TRIP_BREAK_TITLE}" id="tripBreakDialog" stretchOnPhone="true"
+	contentWidth="30rem">
+	<content>
+		<l:VerticalLayout class="sapUiContentPadding" visible="{= ${tripBreakDialogModel>/stripMessage}.length > 0}">
+			<l:content>
+				<MessageStrip text="{tripBreakDialogModel>/stripMessage}" type="{tripBreakDialogModel>/stripType}" showIcon="true"></MessageStrip>
+			</l:content>
+		</l:VerticalLayout>
+		<!-- Extension before the create trip break dialog form -->
+		<core:ExtensionPoint name="topTripBreakDialog"/>
+		<form:SimpleForm id="tripBreakForm" editable="true" maxContainerCols="2" layout="ResponsiveGridLayout" labelSpanS="3" labelSpanM="3"
+			labelSpanL="3" title="{i18n>TRIP_BREAK_TITLE}">
+			<!-- Start date -->
+			<Label text="{i18n>START_DATE}" id="startDateLabel" width="100%" required="true" labelFor="startDateInput"/>
+			<DateTimePicker id="startDateInput"
+				value="{path:'tripBreakDialogModel>/startDate', type:'sap.ui.model.type.DateTime', formatOptions : { style:'medium/short', UTC: true}}"/>
+			<!--visible="{parts:[{path:'tripBreakDialogModel>/startDate_FC'}], formatter:'mytravelandexpense.util.ConfigurationManager.getEditable'}"-->
+			<!-- End date -->
+			<Label text="{i18n>END_DATE}" id="endDateLabel" width="100%" required="true" labelFor="endDateInput"/>
+			<DateTimePicker id="endDateInput"
+				value="{path:'tripBreakDialogModel>/endDate', type:'sap.ui.model.type.DateTime', formatOptions : { style:'medium/short', UTC: true}}"/>
+			<!--visible="{parts:[{path:'tripBreakDialogModel>/endDate_FC'}], formatter:'mytravelandexpense.util.ConfigurationManager.getEditable'}"-->
+			<!-- Recurrence -->
+			<Label text="{i18n>RECURRENCE}" id="recurrenceLabel" width="100%" labelFor="recurrenceInput"/>
+			<ComboBox id="recurrenceInput" selectedKey="N">
+				<items>
+					<core:Item key="N" text="{i18n>NO_RECURRENCE}"/>
+					<core:Item key="D" text="{i18n>DAILY}"/>
+					<core:Item key="W" text="{i18n>WEEKLY}"/>
+				</items>
+			</ComboBox>
+			<!-- Number -->
+			<Label text="{i18n>NUMBER}" id="numberLabel" width="100%" labelFor="numberTripBreakInput"/>
+			<Input id="numberTripBreakInput" value="{tripBreakDialogModel>/number}" type="Number" editable="{tripBreakDialogModel>/numberEditable}"/>
+			<!-- Extension below the trip break creation dialog info -->
+			<core:ExtensionPoint name="belowTripBreakDialogInfo"/>
+		</form:SimpleForm>
+		<!-- Extension below the trip break creation dialog form -->
+		<core:ExtensionPoint name="belowTripBreakDialogForm"/>
+	</content>
+	<beginButton>
+		<Button id="submitButton" text="{i18n>POPUP_CONFIRM}" type="Emphasized"/>
+	</beginButton>
+	<endButton>
+		<Button id="cancelButton" text="{i18n>POPUP_CANCEL}"/>
+	</endButton>
+</Dialog>

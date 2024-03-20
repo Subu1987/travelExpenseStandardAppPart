@@ -1,0 +1,9 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f"
+	controllerName="sap.fin.travel.lib.reuse.controller.Begin" xmlns:html="http://www.w3.org/1999/xhtml">
+	<core:ComponentContainer id="beginPageComponent" height="100%"/>
+</mvc:View>

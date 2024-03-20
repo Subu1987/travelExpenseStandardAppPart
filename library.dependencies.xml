@@ -1,0 +1,1683 @@
+<?xml version="1.0" ?>
+<library  version="2.0" name="sap.fin.travel.lib.reuse">
+  <module name="sap/fin/travel/lib/reuse/DetailPage/Component.js" size="3639" compressedSize="1943">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BaseComponentHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js" size="4088" compressedSize="1865">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppContextHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/manifest.json" size="841">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/DetailPage.view.xml" size="6021">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml"/>
+      <module name="sap/m/FlexBox.js" conditional="true"/>
+      <module name="sap/m/HBox.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/Title.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js" conditional="true"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionListItem.fragment.xml" size="1282">
+    <requires>
+      <module name="sap/m/ResponsivePopover.js"/>
+      <module name="sap/m/SelectList.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Item.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml" size="1213">
+    <requires>
+      <module name="sap/m/SelectDialog.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml" size="4040">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml" size="1966">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml" size="5449">
+    <requires>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml" size="1902">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml" size="5429">
+    <requires>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml" size="3265">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml" size="1269">
+    <requires>
+      <module name="sap/m/Breadcrumbs.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml" size="1224">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml" size="1344">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml" size="1828">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml" size="1221">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml" size="1344">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml" size="1815">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml" size="4585">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ContactDetails.fragment.xml" size="1221">
+    <requires>
+      <module name="sap/m/QuickView.js"/>
+      <module name="sap/m/QuickViewGroup.js"/>
+      <module name="sap/m/QuickViewGroupElement.js"/>
+      <module name="sap/m/QuickViewPage.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml" size="2750">
+    <requires>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Item.js" conditional="true"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml" size="3915">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml" size="5493">
+    <requires>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml" size="1470">
+    <requires>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml" size="1484">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml" size="2609">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml" size="4198">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/DraftIndicator.js"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml" size="3032">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js" conditional="true"/>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml" size="2007">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml" size="3483">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml" size="1763">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js" conditional="true"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml" size="778">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml" size="3289">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml" size="1381">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml" size="1519">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml" size="3650">
+    <requires>
+      <module name="sap/m/HBox.js" conditional="true"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Link.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml" size="1755">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml" conditional="true"/>
+      <module name="sap/m/IconTabBar.js" conditional="true"/>
+      <module name="sap/m/IconTabFilter.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml" size="2120">
+    <requires>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml" size="7777">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/ExtensionPoint.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml" size="7952">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/ExtensionPoint.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml" size="4094">
+    <requires>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml" size="9012">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml" conditional="true"/>
+      <module name="sap/m/Table.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/GridData.js" conditional="true"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml" size="1959">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml" size="9198">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml" conditional="true"/>
+      <module name="sap/m/Column.js" conditional="true"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/InvisibleText.js" conditional="true"/>
+      <module name="{= ${manifestViewTableColumnsExtension&gt;cellFragmentName}}.fragment.xml" conditional="true"/>
+      <module name="{= ${manifestViewTableColumnsExtension&gt;columnFragmentName}}.fragment.xml" conditional="true"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/Component.js" size="9040" compressedSize="3547">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BaseComponentHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/thirdparty/datajs.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js" size="410" compressedSize="358">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/manifest.json" size="839">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/ListPage.view.xml" size="1758">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml" size="1473">
+    <requires>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml" size="1417">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml" size="999">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml" size="1212">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml" size="1577">
+    <requires>
+      <module name="sap/m/OverflowToolbarButton.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml" size="1457">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DraftAdminDataPopover.fragment.xml" size="1136">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml" size="2192">
+    <requires>
+      <module name="sap/m/FlexItemData.js"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml" size="2410">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml" size="3440">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml" conditional="true"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml" size="6793">
+    <requires>
+      <module name="sap/m/Column.js" conditional="true"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/Label.js" conditional="true"/>
+      <module name="sap/m/ObjectMarker.js" conditional="true"/>
+      <module name="sap/m/Text.js" conditional="true"/>
+      <module name="sap/m/VBox.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml" size="1491">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml" conditional="true"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controller/Begin.controller.js" size="673" compressedSize="510">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js" size="267" compressedSize="236">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controller/Middle.controller.js" size="1146" compressedSize="271">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controller/NotFound.controller.js" size="708" compressedSize="540">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controls/IconSwitch.js" size="2208" compressedSize="1437">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js" size="2606" compressedSize="1755">
+    <description>global mytravelandexpense</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controls/IconWithNumber.js" size="2720" compressedSize="1449">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js" size="27621" compressedSize="15344">
+    <description></description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/fin/travel/lib/reuse/library.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FileUploadHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/formatters.js"/>
+      <module name="sap/m/UploadCollection.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n.properties" size="7762">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_ar.properties" size="14089">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_bg.properties" size="16787">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_cs.properties" size="8695">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_de.properties" size="8212">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_en.properties" size="7666">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_en_US_sappsd.properties" size="18542">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_en_US_saptrc.properties" size="9962">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_es.properties" size="8256">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_fr.properties" size="8594">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_hr.properties" size="7950">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_hu.properties" size="9086">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_it.properties" size="8192">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_iw.properties" size="12450">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_ja.properties" size="10591">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_no.properties" size="7826">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_pl.properties" size="8370">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_pt.properties" size="8350">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_ro.properties" size="8526">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_ru.properties" size="16565">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_sh.properties" size="8088">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_sk.properties" size="8642">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_sl.properties" size="7984">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_tr.properties" size="8447">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/i18n/i18n_zh_CN.properties" size="8969">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/library-preload.js" size="427439">
+    <requires>
+      <module name="CryptoJS.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js"/>
+      <module name="sap/f/routing/Router.js"/>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/Breadcrumbs.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Column.js" conditional="true"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/ComboBox.js"/>
+      <module name="sap/m/DatePicker.js"/>
+      <module name="sap/m/DateTimePicker.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/DialogType.js"/>
+      <module name="sap/m/DraftIndicator.js"/>
+      <module name="sap/m/DraftIndicatorState.js"/>
+      <module name="sap/m/FeedListItem.js"/>
+      <module name="sap/m/FlexBox.js"/>
+      <module name="sap/m/FlexItemData.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/IconTabBar.js" conditional="true"/>
+      <module name="sap/m/IconTabFilter.js" conditional="true"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Link.js" conditional="true"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessagePage.js"/>
+      <module name="sap/m/MessagePopover.js"/>
+      <module name="sap/m/MessagePopoverItem.js"/>
+      <module name="sap/m/MessageStrip.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/ObjectAttribute.js"/>
+      <module name="sap/m/ObjectMarker.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/PDFViewer.js"/>
+      <module name="sap/m/PlacementType.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/QuickView.js"/>
+      <module name="sap/m/QuickViewGroup.js"/>
+      <module name="sap/m/QuickViewGroupElement.js"/>
+      <module name="sap/m/QuickViewPage.js"/>
+      <module name="sap/m/ResponsivePopover.js"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/m/SelectDialog.js"/>
+      <module name="sap/m/SelectList.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js" conditional="true"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/UploadCollection.js"/>
+      <module name="sap/m/UploadCollectionItem.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/Event.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/comp/smartfield/SmartField.js"/>
+      <module name="sap/ui/comp/smartfield/SmartLabel.js"/>
+      <module name="sap/ui/comp/smartform/Group.js"/>
+      <module name="sap/ui/comp/smartform/GroupElement.js"/>
+      <module name="sap/ui/comp/smartform/SmartForm.js"/>
+      <module name="sap/ui/core/BusyIndicator.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/CustomizingConfiguration.js" conditional="true"/>
+      <module name="sap/ui/core/ExtensionPoint.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/ValueState.js"/>
+      <module name="sap/ui/core/XMLTemplateProcessor.js"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/message/Message.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/core/mvc/ViewType.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+      <module name="sap/ui/core/util/XMLPreprocessor.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+      <module name="sap/ui/model/Context.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+      <module name="sap/ui/thirdparty/datajs.js"/>
+      <module name="sap/uxap/BlockBase.js"/>
+      <module name="{= ${manifestViewTableColumnsExtension&gt;cellFragmentName}}.fragment.xml" conditional="true"/>
+      <module name="{= ${manifestViewTableColumnsExtension&gt;columnFragmentName}}.fragment.xml" conditional="true"/>
+    </requires>
+    <includes>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/Component.js"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/manifest.json"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/DetailPage.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionListItem.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ContactDetails.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/Component.js"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/manifest.json"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/ListPage.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DraftAdminDataPopover.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/controller/Begin.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controller/Middle.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controller/NotFound.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/IconSwitch.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/IconWithNumber.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js"/>
+      <module name="sap/fin/travel/lib/reuse/library.js"/>
+      <module name="sap/fin/travel/lib/reuse/manifest.json"/>
+      <module name="sap/fin/travel/lib/reuse/model/models.js"/>
+      <module name="sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ActionUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppContextHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BaseComponentHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BusyHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ConfigurationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomAction.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/DateFormatter.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/EventHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FileUploadHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FormatHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PaginatorHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShareHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShellUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdDefinition.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StateUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/formatters.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/fin/travel/lib/reuse/view/Begin.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/DetailDetail.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/Middle.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/NotFound.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Attachments.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Comments.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Copy.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DiscardDraftPopover.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ErrorMessage.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/MessagePopover.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Share.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/TripBreak.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/UnsavedChangesDialog.fragment.xml"/>
+    </includes>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/library-preload.json" size="0">
+    <requires>
+      <module name="CryptoJS.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js"/>
+      <module name="sap/f/routing/Router.js"/>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/Breadcrumbs.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Column.js" conditional="true"/>
+      <module name="sap/m/ColumnListItem.js"/>
+      <module name="sap/m/ComboBox.js"/>
+      <module name="sap/m/DatePicker.js"/>
+      <module name="sap/m/DateTimePicker.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/DialogType.js"/>
+      <module name="sap/m/DraftIndicator.js"/>
+      <module name="sap/m/DraftIndicatorState.js"/>
+      <module name="sap/m/FeedListItem.js"/>
+      <module name="sap/m/FlexBox.js"/>
+      <module name="sap/m/FlexItemData.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/IconTabBar.js" conditional="true"/>
+      <module name="sap/m/IconTabFilter.js" conditional="true"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/Link.js" conditional="true"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessagePage.js"/>
+      <module name="sap/m/MessagePopover.js"/>
+      <module name="sap/m/MessagePopoverItem.js"/>
+      <module name="sap/m/MessageStrip.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/ObjectAttribute.js"/>
+      <module name="sap/m/ObjectMarker.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbar.js"/>
+      <module name="sap/m/OverflowToolbarButton.js"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js"/>
+      <module name="sap/m/PDFViewer.js"/>
+      <module name="sap/m/PlacementType.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/QuickView.js"/>
+      <module name="sap/m/QuickViewGroup.js"/>
+      <module name="sap/m/QuickViewGroupElement.js"/>
+      <module name="sap/m/QuickViewPage.js"/>
+      <module name="sap/m/ResponsivePopover.js"/>
+      <module name="sap/m/Select.js" conditional="true"/>
+      <module name="sap/m/SelectDialog.js"/>
+      <module name="sap/m/SelectList.js"/>
+      <module name="sap/m/StandardListItem.js"/>
+      <module name="sap/m/Table.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/Title.js" conditional="true"/>
+      <module name="sap/m/ToolbarSpacer.js"/>
+      <module name="sap/m/UploadCollection.js"/>
+      <module name="sap/m/UploadCollectionItem.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/m/library.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/base/Event.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/comp/smartfield/SmartField.js"/>
+      <module name="sap/ui/comp/smartfield/SmartLabel.js"/>
+      <module name="sap/ui/comp/smartform/Group.js"/>
+      <module name="sap/ui/comp/smartform/GroupElement.js"/>
+      <module name="sap/ui/comp/smartform/SmartForm.js"/>
+      <module name="sap/ui/core/BusyIndicator.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/Control.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/CustomizingConfiguration.js" conditional="true"/>
+      <module name="sap/ui/core/ExtensionPoint.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Icon.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/InvisibleText.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+      <module name="sap/ui/core/Renderer.js"/>
+      <module name="sap/ui/core/UIComponent.js"/>
+      <module name="sap/ui/core/ValueState.js"/>
+      <module name="sap/ui/core/XMLTemplateProcessor.js"/>
+      <module name="sap/ui/core/library-preload.json"/>
+      <module name="sap/ui/core/library.js"/>
+      <module name="sap/ui/core/message/Message.js"/>
+      <module name="sap/ui/core/mvc/Controller.js"/>
+      <module name="sap/ui/core/mvc/ViewType.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+      <module name="sap/ui/core/util/XMLPreprocessor.js"/>
+      <module name="sap/ui/layout/GridData.js"/>
+      <module name="sap/ui/layout/HorizontalLayout.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+      <module name="sap/ui/model/Context.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+      <module name="sap/ui/thirdparty/datajs.js"/>
+      <module name="sap/uxap/BlockBase.js"/>
+      <module name="{= ${manifestViewTableColumnsExtension&gt;cellFragmentName}}.fragment.xml" conditional="true"/>
+      <module name="{= ${manifestViewTableColumnsExtension&gt;columnFragmentName}}.fragment.xml" conditional="true"/>
+    </requires>
+    <includes>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/Component.js"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/manifest.json"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/DetailPage.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionListItem.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/ContactDetails.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/Component.js"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/manifest.json"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/ListPage.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/DraftAdminDataPopover.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/controller/Begin.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controller/Middle.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controller/NotFound.controller.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/IconSwitch.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/IconWithNumber.js"/>
+      <module name="sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js"/>
+      <module name="sap/fin/travel/lib/reuse/library.js"/>
+      <module name="sap/fin/travel/lib/reuse/manifest.json"/>
+      <module name="sap/fin/travel/lib/reuse/model/models.js"/>
+      <module name="sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ActionUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppContextHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BaseComponentHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BusyHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ConfigurationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomAction.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/DateFormatter.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/EventHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FileUploadHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FormatHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PaginatorHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShareHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShellUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdDefinition.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StateUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/formatters.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/fin/travel/lib/reuse/view/Begin.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/DetailDetail.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/Middle.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/NotFound.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Attachments.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Comments.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Copy.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DiscardDraftPopover.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.view.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ErrorMessage.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/MessagePopover.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/Share.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/TripBreak.fragment.xml"/>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/UnsavedChangesDialog.fragment.xml"/>
+    </includes>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/library.js" size="6095" compressedSize="2638">
+    <description>Initialization Code and shared classes of library sap.fin.travel.lib.reuse.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/IconPool.js"/>
+      <module name="sap/ui/core/library.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/manifest.json" size="1356">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle.properties" size="3256">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_ar.properties" size="5705">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_bg.properties" size="6997">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_cs.properties" size="3557">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_de.properties" size="3492">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_en.properties" size="3181">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_en_US_sappsd.properties" size="7349">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_en_US_saptrc.properties" size="3820">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_es.properties" size="3465">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_fr.properties" size="3525">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_hr.properties" size="3530">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_hu.properties" size="3846">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_it.properties" size="3418">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_iw.properties" size="5568">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_ja.properties" size="4909">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_no.properties" size="3300">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_pl.properties" size="3569">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_pt.properties" size="3490">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_ro.properties" size="3778">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_ru.properties" size="6984">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_sh.properties" size="3440">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_sk.properties" size="3662">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_sl.properties" size="3509">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_tr.properties" size="3546">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/messagebundle_zh_CN.properties" size="3704">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/model/models.js" size="1459" compressedSize="986">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/DraftIndicatorState.js"/>
+      <module name="sap/ui/Device.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js" size="4385" compressedSize="4377" requiresTopLevelScope="true" exposedGlobals="CryptoJS" raw="true">
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/ActionUtil.js" size="34692" compressedSize="15174">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/m/PDFViewer.js"/>
+      <module name="sap/ui/comp/smartfield/SmartField.js"/>
+      <module name="sap/ui/comp/smartfield/SmartLabel.js"/>
+      <module name="sap/ui/comp/smartform/Group.js"/>
+      <module name="sap/ui/comp/smartform/GroupElement.js"/>
+      <module name="sap/ui/comp/smartform/SmartForm.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+      <module name="sap/ui/model/Context.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js" size="84998" compressedSize="41211">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/ui/base/Object.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/AppComponent.js" size="37443" compressedSize="13062">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/f/routing/Router.js"/>
+      <module name="sap/fin/travel/lib/reuse/model/models.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BusyHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PaginatorHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShellUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StateUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/ui/core/CustomizingConfiguration.js" conditional="true"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+      <module name="sap/ui/model/Context.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/AppContextHandler.js" size="2194" compressedSize="1222">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js" size="4421" compressedSize="1946">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/BaseComponentHandler.js" size="8012" compressedSize="3513">
+    <requires>
+      <module name="CryptoJS.js"/>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ConfigurationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/EventHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FormatHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdDefinition.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/mvc/ViewType.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/BusyHelper.js" size="599" compressedSize="339">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/core/BusyIndicator.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/ConfigurationUtil.js" size="1642" compressedSize="769">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js" size="3752" compressedSize="1013">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/m/Table.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/CustomAction.js" size="10129" compressedSize="4031">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/DateFormatter.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js" size="1030" compressedSize="625">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/DateFormatter.js" size="1164" compressedSize="423">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/EventHandler.js" size="103050" compressedSize="42888">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ActionUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ConfigurationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PaginatorHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShareHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessageToast.js"/>
+      <module name="sap/m/PDFViewer.js"/>
+      <module name="sap/m/PlacementType.js"/>
+      <module name="sap/ui/base/Event.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+      <module name="sap/ui/core/XMLTemplateProcessor.js"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+      <module name="sap/ui/core/util/XMLPreprocessor.js"/>
+      <module name="sap/ui/model/Context.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/FCLayoutHandler.js" size="1248" compressedSize="746">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/ui/base/Object.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js" size="8317" compressedSize="3844">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/f/FlexibleColumnLayoutSemanticHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/CustomDataUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ShellUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/formatters.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/FileUploadHelper.js" size="12894" compressedSize="6078">
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="jquery.sap.resources.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/FormatHandler.js" size="1677" compressedSize="933">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js" size="10578" compressedSize="5465">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/DialogType.js"/>
+      <module name="sap/m/FlexBox.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/m/MessageStrip.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/MessageParser.js" size="7621" compressedSize="3018">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js" size="14557" compressedSize="5721">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppContextHandler.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FragmentHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageParser.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+      <module name="sap/m/MessageBox.js"/>
+      <module name="sap/ui/core/MessageType.js"/>
+      <module name="sap/ui/core/ValueState.js"/>
+      <module name="sap/ui/core/message/Message.js"/>
+      <module name="sap/ui/model/json/JSONModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js" size="8507" compressedSize="3229">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/FCLayoutUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/ui/core/routing/HashChanger.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js" size="11948" compressedSize="3861">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/NavigationUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/m/DraftIndicatorState.js"/>
+      <module name="sap/ui/model/Context.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/PaginatorHelper.js" size="5282" compressedSize="1468">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/model/Context.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/PersistenceHelper.js" size="18907" compressedSize="6231">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/BusyHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ControlUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/MessageUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/ODataModelUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StateUtil.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/Utils.js"/>
+      <module name="sap/m/DraftIndicatorState.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/ShareHelper.js" size="665" compressedSize="401">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AppComponent.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/ShellUtil.js" size="3077" compressedSize="1709">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/formatters.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/i18n.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/StableIdDefinition.js" size="3568" compressedSize="2590">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/StableIdHelper.js" size="3885" compressedSize="1662">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/AnnotationHelper.js"/>
+      <module name="sap/fin/travel/lib/reuse/util/StableIdDefinition.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/StateUtil.js" size="503" compressedSize="356">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/TravelUtil.js" size="1422" compressedSize="1105">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/Utils.js" size="4480" compressedSize="1611">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/formatters.js" size="3062" compressedSize="1233">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/util/i18n.js" size="4083" compressedSize="1902">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/ui/base/Object.js"/>
+      <module name="sap/ui/model/resource/ResourceModel.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/Begin.view.xml" size="369">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/controller/Begin.controller.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/DetailDetail.view.xml" size="396">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/Middle.view.xml" size="371">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/controller/Middle.controller.js"/>
+      <module name="sap/ui/core/ComponentContainer.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/NotFound.view.xml" size="241">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/controller/NotFound.controller.js"/>
+      <module name="sap/m/MessagePage.js"/>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml" size="2205">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml" size="2387">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml" size="2386">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml" size="2337">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/Attachments.fragment.xml" size="1485">
+    <requires>
+      <module name="sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js"/>
+      <module name="sap/m/ObjectAttribute.js"/>
+      <module name="sap/m/UploadCollectionItem.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/Comments.fragment.xml" size="779">
+    <requires>
+      <module name="sap/m/FeedListItem.js"/>
+      <module name="sap/m/List.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/Copy.fragment.xml" size="1956">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/DatePicker.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/MessageStrip.js"/>
+      <module name="sap/ui/core/ExtensionPoint.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/DiscardDraftPopover.fragment.xml" size="968">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Popover.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/m/VBox.js"/>
+      <module name="sap/ui/core/CustomData.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js" size="570" compressedSize="435">
+    <description>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</description>
+    <requires>
+      <module name="jquery.sap.global.js"/>
+      <module name="sap/uxap/BlockBase.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/DummyBlock.view.xml" size="277">
+    <requires>
+      <module name="sap/ui/core/mvc/XMLView.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/ErrorMessage.fragment.xml" size="587">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/HBox.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/MessagePopover.fragment.xml" size="316">
+    <requires>
+      <module name="sap/m/MessagePopover.js"/>
+      <module name="sap/m/MessagePopoverItem.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/Share.fragment.xml" size="933">
+    <requires>
+      <module name="sap/m/ActionSheet.js"/>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/ResponsivePopover.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml" size="2886">
+    <requires>
+      <module name="sap/m/Button.js" conditional="true"/>
+      <module name="sap/m/OverflowToolbarLayoutData.js" conditional="true"/>
+      <module name="sap/ui/core/CustomData.js" conditional="true"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/TripBreak.fragment.xml" size="2964">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/ComboBox.js"/>
+      <module name="sap/m/DateTimePicker.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Input.js"/>
+      <module name="sap/m/Label.js"/>
+      <module name="sap/m/MessageStrip.js"/>
+      <module name="sap/ui/core/ExtensionPoint.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+      <module name="sap/ui/core/Item.js"/>
+      <module name="sap/ui/layout/VerticalLayout.js"/>
+      <module name="sap/ui/layout/form/SimpleForm.js"/>
+    </requires>
+  </module>
+  <module name="sap/fin/travel/lib/reuse/view/fragments/UnsavedChangesDialog.fragment.xml" size="661">
+    <requires>
+      <module name="sap/m/Button.js"/>
+      <module name="sap/m/Dialog.js"/>
+      <module name="sap/m/Text.js"/>
+      <module name="sap/ui/core/Fragment.js"/>
+    </requires>
+  </module>
+</library>

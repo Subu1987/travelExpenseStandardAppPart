@@ -1,0 +1,128 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!-- @classdesc @name: Name: sap.fin.travel.lib.reuse.ListPage.view.fragments.TableColumns.fragment.xml
+		@description: Visualizes one column (header and data) of a responsive table
+		-->
+	<template:with path="listEntityType>" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.searchForFirstSemKeyTitleDescription"
+		var="targetColumn">
+		<template:with path="parameter>/" helper="sap.fin.travel.lib.reuse.util.StableIdHelper.preparePathForStableId" var="columnListItemId">
+			<template:if
+				test="{= ${columnListItemId>}.buildStableId({type: 'DetailPageTable', subType: 'ColumnListItem', sEntityName: ${listEntitySet>name}, sQuickVariantKey: ${variant>}})}"/>
+			<columns>
+				<template:repeat list="{collection>}" var="dataField">
+					<!--handle data field which is either semantic key, title or description -->
+					<template:if
+						test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataField' &amp;&amp; (${dataField>Value/Path} === ${targetColumn>} )}">
+						<template:with path="dataField>Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldValue">
+							<Column
+								id="{:= ${parameter>/stableId}.getStableId({type: 'TableColumn', subType: 'DataField', sSmartTableId: ${listEntitySet>name}, sProperty: ${dataField>Value/Path}, sQuickVariantKey: ${variant>}})}"
+								visible="{= ( ${dataField>com.sap.vocabularies.UI.v1.Hidden} || ( ${dataField>com.sap.vocabularies.Common.v1.FieldControl/EnumMember} === 'com.sap.vocabularies.Common.v1.FieldControlType/Hidden')) ? 'false' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'true' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/Medium' &amp;&amp; ( ${device>/system/tablet} || ${device>/system/desktop} ) ? 'true' : ${device>/system/desktop} ? 'true' : 'false' ) ) }">
+								<customData>
+									<core:CustomData key="p13nData"
+										value="{parts: [{path: 'listEntitySet>'}, {path: 'dataFieldValue>'}, {path: 'dataField>'} ], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.createP13N'}"/>
+								</customData>
+								<Text
+									id="{:= ${parameter>/stableId}.getStableId({type: 'DataField', subType: 'Text', sSmartTableId: ${listEntitySet>name}, sProperty: ${dataField>Value/Path}, sQuickVariantKey: ${variant>}})}"
+									tooltip="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnToolTip'}"
+									text="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnHeaderText'}"></Text>
+							</Column>
+						</template:with>
+					</template:if>
+					<!-- handle inline actions -->
+					<template:if
+						test="{= (${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation') &amp;&amp; ${dataField>Inline/Bool} === 'true'}">
+						<Column
+							id="{:= ${parameter>/stableId}.getStableId({type: 'TableColumn', subType: 'DataField', sSmartTableId: ${listEntitySet>name}, sProperty: ${dataField>Value/Path}, sQuickVariantKey: ${variant>}})}"
+							popinDisplay="WithoutHeader"
+							visible="{= ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'true' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/Medium' &amp;&amp; ( ${device>/system/tablet} || ${device>/system/desktop} ) ? 'true' : ${device>/system/desktop} ? 'true' : 'false' ) }">
+							<customData>
+								<core:CustomData key="p13nData"
+									value="{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.createP13NColumnForAction'}"/>
+							</customData>
+							<template:if test="{dataField>Inline/Bool} === 'true'">
+								<template:then>
+									<template:if test="{dataField>Label}">
+										<template:then>
+											<core:InvisibleText text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+										</template:then>
+									</template:if>
+								</template:then>
+								<template:else>
+									<template:if test="{dataField>Label}">
+										<template:then>
+											<Text
+												id="{:= ${parameter>/stableId}.getStableId({type: 'DataField', subType: 'Text', sSmartTableId: ${listEntitySet>name}, sProperty: ${dataField>Value/Path}, sQuickVariantKey: ${variant>}})}"
+												text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" visible="true"/>
+										</template:then>
+									</template:if>
+								</template:else>
+							</template:if>
+						</Column>
+					</template:if>
+				</template:repeat>
+				<!-- handle inline actions coming from manifest -->
+				<template:with
+					path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.DetailPage.view.fragments.TableColumns"
+					var="manifestViewTableColumnsExtensions">
+					<template:repeat list="{manifestViewTableColumnsExtensions>}" var="manifestViewTableColumnsExtension">
+						<template:if
+							test="{= ${manifestViewTableColumnsExtension>tableId} === ${path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'} + '::Table'}">
+							<template:then>
+								<core:Fragment fragmentName="{= ${manifestViewTableColumnsExtension>columnFragmentName}}" type="XML"/>
+							</template:then>
+						</template:if>
+					</template:repeat>
+				</template:with>
+			</columns>
+			<items>
+				<ColumnListItem id="{columnListItemId>id}" vAlign="Middle" highlight="{path: 'Criticality', formatter: '._formatHandler.formatCriticality'}"
+					type="{parts:[{path: 'parameter>/pages'}, {path: 'listEntitySet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnListItemType'}"
+					press="._eventHandler.handleItemPress">
+					<cells>
+						<template:repeat list="{collection>}" var="dataField">
+							<!--  handle data field which is either semantic key, title or description -->
+							<template:if
+								test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataField' &amp;&amp; (${dataField>Value/Path} === ${targetColumn>} )}">
+								<template:with path="dataField>Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldValue">
+									<VBox id="{columnListItemId>id}::VContainer::{dataField>Value/Path}" class="sapMTableContentMargin">
+										<items>
+											<!-- After StableId is available for all columns check how to add AriaLabeledBy association as it may be needed for the Screen reader suppport -->
+											<Label id="{columnListItemId>id}::Label::{dataField>Value/Path}" class="sapSmartTemplatesListReportFirstText" design="Bold" wrapping="true"
+												text="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}, {path: 'entityType>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnCellFirstText'}"
+												visible="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}, {path: 'entityType>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnCellFirstTextVisibility'}"></Label>
+										</items>
+									</VBox>
+								</template:with>
+							</template:if>
+							<!-- handle inline actions -->
+							<template:if
+								test="{= (${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation') &amp;&amp; ${dataField>Inline/Bool} === 'true'}">
+								<template:then>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.AnnotatedInlineActionButton" type="XML"/>
+								</template:then>
+							</template:if>
+						</template:repeat>
+						<!-- handle inline actions coming from manifest -->
+						<template:with
+							path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.DetailPage.view.fragments.TableColumns"
+							var="manifestViewTableColumnsExtensions">
+							<template:repeat list="{manifestViewTableColumnsExtensions>}" var="manifestViewTableColumnsExtension">
+								<template:if
+									test="{= ${manifestViewTableColumnsExtension>tableId} === ${path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'} + '::Table'}">
+									<template:then>
+										<core:Fragment fragmentName="{= ${manifestViewTableColumnsExtension>cellFragmentName}}" type="XML"/>
+									</template:then>
+								</template:if>
+							</template:repeat>
+						</template:with>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

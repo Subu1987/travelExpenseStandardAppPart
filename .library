@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>sap.fin.travel.lib.reuse</name>
+    <vendor>SAP SE</vendor>
+    <version>2.0.49</version>
+    <copyright>Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.</copyright>
+    <title>>{{title}}</title>
+    <documentation>{{description}}</documentation>
+	<appData>
+	    <manifest xmlns="http://www.sap.com/ui5/buildext/manifest" >
+	        <i18n>messagebundle.properties</i18n>
+	        <offline>false</offline>
+	        <deviceTypes desktop="true" phone="true" tablet="true" />
+            <supportedTheme>sap_hcb</supportedTheme>
+            <supportedTheme>sap_bluecrystal</supportedTheme>
+            <supportedTheme>sap_belize</supportedTheme>
+	        	<contentDensities cozy="false" compact="true" />
+	        <sap.fiori>
+	            <registrationId>F3070</registrationId>
+	            <archeType>reusecomponent</archeType>
+	        </sap.fiori>
+	        <sap.platform.abap>
+	            <uri>/sap/bc/ui5_ui5/sap/undefined</uri>
+	        </sap.platform.abap>
+	        <sap.platform.hcp>
+	            <uri></uri>
+	        </sap.platform.hcp>
+	    </manifest>
+	    <ownership xmlns="http://www.sap.com/ui5/buildext/ownership">
+	        <component>FI-FIO-TV</component>
+	    </ownership>
+  </appData>
+
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+</library>

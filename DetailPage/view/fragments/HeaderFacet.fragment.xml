@@ -1,0 +1,26 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderFacet
+        @description: This fragment describes the header content facets.
+    -->
+	<template:if test="{=${headerFacet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') >= 0}">
+		<template:then>
+			<template:with path="headerFacet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataPoint">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderDataPoint" type="XML"/>
+			</template:with>
+		</template:then>
+		<template:elseif test="{= ${headerFacet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') >= 0}">
+			<template:with path="headerFacet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="form">
+				<template:with path="form>Data/0/Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="target">
+					<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderForm" type="XML"/>
+				</template:with>
+			</template:with>
+		</template:elseif>
+	</template:if>
+</core:FragmentDefinition>

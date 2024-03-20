@@ -1,0 +1,68 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:core="sap.ui.core"
+	xmlns:uxap="sap.uxap">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.Actions
+        @description: This fragment describes the detail view action buttons.
+    -->
+	<!--<template:if test="{parts: [{path: 'entitySet>'}, {path: 'parameter>/'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.test'}"/>-->
+	<template:with
+		path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.DetailPage.view.fragments.DetailPage"
+		var="override">
+		<!--
+			Edit Button with shortcut
+		-->
+		<template:if test="{= ${parameter>/configuration/commandExecution} === true}">
+			<template:then>
+			<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/EditDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/EditDetailPage}" text="{i18n>EDIT_BUTTON}"
+					press="cmd:Edit"
+					visible="{= ${EditVisible} &amp;&amp; ( ${view>/level} === 1 || ${_global>/fcl/isLogicallyFullScreen} ) }" hideText="false"
+					importance="Medium" type="Emphasized"/>
+			</template:if>
+			</template:then>
+			<template:else>
+			<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/EditDetailPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<uxap:ObjectPageHeaderActionButton id="{parameter>/defaultButtons/EditDetailPage}" text="{i18n>EDIT_BUTTON}"
+					press="._eventHandler.handleEditAction"
+					visible="{= ${EditVisible} &amp;&amp; ( ${view>/level} === 1 || ${_global>/fcl/isLogicallyFullScreen} ) }" hideText="false"
+					importance="Medium" type="Emphasized"/>
+			</template:if>
+			</template:else>
+		</template:if>
+
+		
+		<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.AnnotatedCriticalHeaderActionButtons" type="XML"/>
+		</template:repeat>
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.BreakoutCriticalHeaderActions" type="XML"/>
+		</template:repeat>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.DefaultHeaderActions" type="XML"/>
+		<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.AnnotatedHeaderActionButtons" type="XML"/>
+		</template:repeat>
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.BreakoutHeaderActions" type="XML"/>
+		</template:repeat>
+		<template:if test="{= ${parameter>/configuration/objectPageDynamicHeader} === true}">
+			<template:then>
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FCLScreenActions" type="XML"/>
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FCLCloseAction" type="XML"/></template:then>
+			<template:else>
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.PaginatorButtons" type="XML"/>
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FCLScreenActions" type="XML"/>
+			</template:else>
+		</template:if>
+	</template:with>
+</core:FragmentDefinition>

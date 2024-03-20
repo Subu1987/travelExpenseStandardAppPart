@@ -1,0 +1,43 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!-- @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.Facet @description: This fragment describes the section's facet. -->
+	<template:with path="facet>Target" var="groupFacet">
+		<template:with path="groupFacet>" helper="sap.ui.model.odata.AnnotationHelper.gotoEntitySet" var="listEntitySet">
+			<template:if test="{path: 'facet>Target', formatter: 'sap.ui.model.odata.AnnotationHelper.isMultiple'}">
+				<template:then>
+					<template:if test="{=${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.LineItem') > -1}">
+						<template:then>
+							<template:if test="{parts: [{path: 'facet>'}, {path: 'parameter>/settings'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.hasQuickSelectionVariant'}">
+								<template:then>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.IconTabBarWithSmartTable" type="XML"/>
+								</template:then>
+								<template:else>
+									<template:with path="entitySet>dummy" var="variant">
+										<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartTable" type="XML"/>
+									</template:with>
+								</template:else>
+							</template:if>
+						</template:then>
+					</template:if>
+				</template:then>
+				<template:elseif
+					test="{= ${facet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.CollectionFacet') > -1 || (${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') > -1 || ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.Identification') > -1) }">
+					<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartForm" type="XML"/>
+				</template:elseif>
+				<template:elseif test="{= ${facet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.DataPoint') > -1 }">
+					<template:with path="facet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataPoint">
+						<template:if test="{= ${dataPoint>Visualization/EnumMember}.indexOf('com.sap.vocabularies.UI.v1.VisualizationType/Rating') = -1 }">
+							<template:then>
+								<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartForm" type="XML"/>
+							</template:then>
+						</template:if>
+					</template:with>
+				</template:elseif>
+			</template:if>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

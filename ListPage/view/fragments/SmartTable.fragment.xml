@@ -1,0 +1,39 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:smartlink="sap.ui.comp.navpopover" xmlns:smarttable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<template:with path="entityType>com.sap.vocabularies.UI.v1.HeaderInfo" var="header">
+		<template:with path="entitySet>dummy" var="facet">
+			<template:with path="entityType>" var="listEntityType">
+				<smarttable:SmartTable id="listPageSmartTableID" smartFilterId="listPageFilterBar" persistencyKey="SmartTable" placeToolbarInTable="true"
+					header="{path: 'header>TypeNamePlural', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" tableType="ResponsiveTable"
+					 demandPopin="true"
+					showDetailsButton = "true" detailsButtonSetting = "None,Low,Medium"
+
+					customData:p13nDialogSettings="{filter:{visible:false}}" useVariantManagement="false" showTablePersonalisation="false"
+					entitySet="{parameter>/entitySet}" dataReceived="._eventHandler.onDataReceived" useExportToExcel="false"
+					noData="{path: 'entitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getNoDataText'}">
+					<smarttable:customData>
+						<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}'/>
+					</smarttable:customData>
+					<smarttable:customToolbar>
+						<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.SmartTableToolbar" type="XML"/>
+					</smarttable:customToolbar>
+					<Table id="responsiveTableID" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft"
+						sticky="ColumnHeaders,HeaderToolbar" selectionChange="._eventHandler.handleSelectionChange">
+						<template:with path="entitySet>" var="listEntitySet">
+							<template:with path="workingContext>lineItemPath" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveMetaModelPath"
+								var="collection">
+								<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.TableColumns" type="XML"/>
+							</template:with>
+						</template:with>
+					</Table>
+				</smarttable:SmartTable>
+			</template:with>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

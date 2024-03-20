@@ -1,0 +1,73 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:sfi="sap.ui.comp.smartfield"
+	xmlns:core="sap.ui.core">
+	<!-- @classdesc @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.TableColumns.fragment.xml
+		@description: Visualizes one column (header and data) of a responsive table
+		-->
+	<template:with path="listEntityType>" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.searchForFirstSemKeyTitleDescription"
+		var="targetColumn">
+		<template:with path="parameter>/" helper="sap.fin.travel.lib.reuse.util.StableIdHelper.preparePathForStableId" var="columnListItemId">
+			<template:if
+				test="{= ${columnListItemId>}.buildStableId({type: 'ListPageTable', subType: 'ColumnListItem', sEntityName: ${listEntitySet>name},sQuickVariantKey: ${variant>}})}"/>
+			<columns>
+				<template:repeat list="{collection>}" var="dataField">
+					<!--  handle data field which is either semantic key, title or description -->
+					<template:with path="dataField>Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldValue">
+						<template:if
+							test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataField' &amp;&amp; (${dataField>Value/Path} === ${targetColumn>} || ${dataFieldValue>type} === 'Edm.DateTimeOffset')}">
+							<Column
+								id="{:= ${parameter>/stableId}.getStableId({type: 'TableColumn', subType: 'DataField', sSmartTableId: ${listEntitySet>name}, sProperty: ${dataField>Value/Path}, sQuickVariantKey: ${variant>}})}"
+								visible="{= ( ${dataField>com.sap.vocabularies.UI.v1.Hidden} || ( ${dataField>com.sap.vocabularies.Common.v1.FieldControl/EnumMember} === 'com.sap.vocabularies.Common.v1.FieldControlType/Hidden')) ? 'false' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'true' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/Medium' &amp;&amp; ( ${device>/system/tablet} || ${device>/system/desktop} ) ? 'true' : ${device>/system/desktop} ? 'true' : 'false' ) ) }">
+								<customData>
+									<core:CustomData key="p13nData"
+										value="{parts: [{path: 'listEntitySet>'}, {path: 'dataFieldValue>'}, {path: 'dataField>'} , {path: 'workingContext>'} ], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.createP13N'}"/>
+								</customData>
+								<Text
+									id="{:= ${parameter>/stableId}.getStableId({type: 'DataField', subType: 'Text', sSmartTableId: ${listEntitySet>name}, sProperty: ${dataField>Value/Path}, sQuickVariantKey: ${variant>}})}"
+									tooltip="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnToolTip'}"
+									text="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnHeaderText'}"></Text>
+							</Column>
+						</template:if>
+					</template:with>
+				</template:repeat>
+			</columns>
+			<items>
+				<ColumnListItem id="{columnListItemId>id}" vAlign="Middle"
+					type="{parts:[{path: 'parameter>/pages'}, {path: 'listEntitySet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnListItemType'}"
+					press="._eventHandler.handleListPageItemPress">
+					<cells>
+						<template:repeat list="{collection>}" var="dataField">
+							<!--  handle data field which is either semantic key, title or description -->
+							<template:with path="dataField>Value" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldValue">
+								<template:if
+									test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataField' &amp;&amp; (${dataField>Value/Path} === ${targetColumn>}) }">
+									<VBox id="{columnListItemId>id}::VContainer::{dataField>Value/Path}" class="sapMTableContentMargin"
+										visible="{= ( ${dataField>com.sap.vocabularies.UI.v1.Hidden} || ( ${dataField>com.sap.vocabularies.Common.v1.FieldControl/EnumMember} === 'com.sap.vocabularies.Common.v1.FieldControlType/Hidden')) ? 'false' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'true' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/Medium' &amp;&amp; ( ${device>/system/tablet} || ${device>/system/desktop} ) ? 'true' : ${device>/system/desktop} ? 'true' : 'false' ) ) }">
+										<items>
+											<!-- After StableId is available for all columns check how to add AriaLabeledBy association as it may be needed for the Screen reader suppport -->
+											<Label id="{columnListItemId>id}::Label::{dataField>Value/Path}" class="sapSmartTemplatesListReportFirstText" design="Bold" wrapping="true"
+												text="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}, {path: 'entityType>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnCellFirstText'}"
+												visible="{parts: [{path: 'dataFieldValue>'}, {path: 'dataField>'}, {path: 'entityType>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getColumnCellFirstTextVisibility'}"></Label>
+											<ObjectMarker id="{columnListItemId>id}::ObjectMarker::{dataField>Value/Path}"
+												type="{path: 'DraftLinkType', formatter: '._formatHandler.formatDraftLinkType'}" press="._eventHandler.handleOnDraftLinkPressed"
+												visible="{= ${DraftLinkVisible} ? true : false}" additionalInfo="{DraftUserId}"/>
+										</items>
+									</VBox>
+								</template:if>
+								<template:if test="{= ${dataFieldValue>type} === 'Edm.DateTimeOffset' }">
+									<Text text="{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatDateTimeOffset'}"
+										visible="{= ( ${dataField>com.sap.vocabularies.UI.v1.Hidden} || ( ${dataField>com.sap.vocabularies.Common.v1.FieldControl/EnumMember} === 'com.sap.vocabularies.Common.v1.FieldControlType/Hidden')) ? 'false' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'true' : ( ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/Medium' &amp;&amp; ( ${device>/system/tablet} || ${device>/system/desktop} ) ? 'true' : ${device>/system/desktop} ? 'true' : 'false' ) ) }"/>
+								</template:if>
+							</template:with>
+						</template:repeat>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</template:with>
+	</template:with>
+</core:FragmentDefinition>

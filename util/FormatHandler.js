@@ -1,0 +1,4 @@
+/*
+ * Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+ */
+sap.ui.define(["sap/ui/base/Object","sap/fin/travel/lib/reuse/util/i18n","sap/ui/core/MessageType","sap/fin/travel/lib/reuse/util/Utils"],function(B,I,M,U){"use strict";function f(c){if(c){switch(c){case 1:return M.Error;case 2:return M.Warning;default:return M.None;}}return M.None;}function a(D){if(D&&!U.isEmptyObjectOrString(D)){return D;}else{return"Draft";}}function g(c){function b(){var A=Array.prototype.slice.call(arguments,1);var k=arguments[0];if(!k){return"";}else{return I.get().getText(c,k,A[0]);}}function d(D){if(D==="Draft"){return I.get().getText(c,"DRAFT_OBJECT");}else{return I.get().getText(c,"UNSAVED_CHANGES");}}return{formatDraftLinkType:a,formatText:b,formatDraftLockText:d,formatCriticality:f};}return B.extend("sap.fin.travel.lib.reuse.util.FormatHandler",{constructor:function(c){jQuery.extend(this,g(c));}});});

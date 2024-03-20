@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{message>/title}" state="{message>/state}" type="Message">
+		<content>
+			<HBox>
+				<Text text="{message>/message}"/>
+			</HBox>
+			<HBox class="sapUiSmallMarginTop">
+				<Text visible="{= ${message>/detail}.length !== 0 }" text="{message>/detail}"/>
+			</HBox>
+		</content>
+		<endButton>
+			<Button id="closeButton" text="{message>/close}" press="close"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

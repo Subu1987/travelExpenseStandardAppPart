@@ -1,0 +1,32 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap">
+	<uxap:ObjectPageHeaderActionButton id="NavigationUp" icon="sap-icon://navigation-up-arrow"
+		visible="{= (${_global>/paginator/navUpEnabled} || ${_global>/paginator/navDownEnabled}) &amp;&amp; ${view>/level} > 1 &amp;&amp; ${_global>/fcl/isLogicallyFullScreen} }"
+		enabled="{_global>/paginator/navUpEnabled}" tooltip="{i18n>PREVIOUS_BUTTON}" press="._eventHandler.handleShowPrevObject" type="Transparent"
+		importance="High">
+		<uxap:customData>
+			<core:CustomData key="source" value="paginator"/>
+			<core:CustomData key="entityName"
+				value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+			<core:CustomData key="entityKey"
+				value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+		</uxap:customData>
+	</uxap:ObjectPageHeaderActionButton>
+	<uxap:ObjectPageHeaderActionButton id="NavigationDown" icon="sap-icon://navigation-down-arrow"
+		visible="{= (${_global>/paginator/navUpEnabled} || ${_global>/paginator/navDownEnabled}) &amp;&amp; ${view>/level} > 1 &amp;&amp; ${_global>/fcl/isLogicallyFullScreen} }"
+		enabled="{_global>/paginator/navDownEnabled}" tooltip="{i18n>NEXT_BUTTON}" press="._eventHandler.handleShowNextObject" type="Transparent"
+		importance="High">
+		<uxap:customData>
+			<core:CustomData key="source" value="paginator"/>
+			<core:CustomData key="entityName"
+				value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+			<core:CustomData key="entityKey"
+				value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+		</uxap:customData>
+	</uxap:ObjectPageHeaderActionButton>
+</core:FragmentDefinition>

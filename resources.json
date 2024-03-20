@@ -1,0 +1,2970 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library"
+		},
+		{
+			"name": ".theming"
+		},
+		{
+			"name": "DetailPage/Component-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/Component.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/core/UIComponent.js"
+			]
+		},
+		{
+			"name": "DetailPage/Component.js",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/Component.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/core/UIComponent.js"
+			]
+		},
+		{
+			"name": "DetailPage/controller/DetailPage-dbg.controller.js",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "DetailPage/controller/DetailPage.controller.js",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "DetailPage/manifest.json",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/manifest.json"
+		},
+		{
+			"name": "DetailPage/view/DetailPage.view.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/DetailPage.view.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml",
+				"sap/ui/core/mvc/XMLView.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/ActionListItem.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionListItem.fragment.xml",
+			"required": [
+				"sap/m/ResponsivePopover.js",
+				"sap/m/SelectList.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml",
+			"required": [
+				"sap/m/SelectDialog.js",
+				"sap/m/StandardListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/Actions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/Breadcrumbs.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml",
+			"required": [
+				"sap/m/Breadcrumbs.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/CRUDActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarButton.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/ContactDetails.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/ContactDetails.fragment.xml",
+			"required": [
+				"sap/m/QuickView.js",
+				"sap/m/QuickViewGroup.js",
+				"sap/m/QuickViewGroupElement.js",
+				"sap/m/QuickViewPage.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Label.js",
+				"sap/m/Select.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/DefaultHeaderActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/FCLCloseAction.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml",
+			"required": [
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/FCLScreenActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/Facet.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/FooterToolbar.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml",
+				"sap/m/Button.js",
+				"sap/m/DraftIndicator.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleText.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/FormActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js",
+				"sap/m/Button.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/FormAnnotatedActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/FormBreakoutActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/HeaderContent.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/HorizontalLayout.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml",
+				"sap/m/VBox.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/HeaderDataPoint.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml",
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/HeaderDataPointContent.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/HeaderFacet.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/HeaderForm.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml",
+			"required": [
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml",
+				"sap/m/Text.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/HeaderFormDataField.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/HBox.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml",
+				"sap/m/IconTabBar.js",
+				"sap/m/IconTabFilter.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/PaginatorButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/Sections.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml",
+				"sap/ui/core/ExtensionPoint.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/SmartForm.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml",
+			"required": [
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/GridData.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml",
+				"sap/ui/core/ExtensionPoint.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/SmartFormDataField.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/SmartTable.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml",
+				"sap/m/Table.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/layout/GridData.js"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/SmartTableToolbar.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml"
+			]
+		},
+		{
+			"name": "DetailPage/view/fragments/TableColumns.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml",
+			"required": [
+				"sap/m/ColumnListItem.js",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml",
+				"sap/m/Column.js",
+				"sap/m/Label.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/InvisibleText.js",
+				"{\u003d ${manifestViewTableColumnsExtension\u003ecellFragmentName}}.fragment.xml",
+				"{\u003d ${manifestViewTableColumnsExtension\u003ecolumnFragmentName}}.fragment.xml"
+			]
+		},
+		{
+			"name": "ListPage/Component-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/ListPage/Component.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/thirdparty/datajs.js"
+			]
+		},
+		{
+			"name": "ListPage/Component.js",
+			"module": "sap/fin/travel/lib/reuse/ListPage/Component.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/thirdparty/datajs.js"
+			]
+		},
+		{
+			"name": "ListPage/controller/ListPage-dbg.controller.js",
+			"module": "sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "ListPage/controller/ListPage.controller.js",
+			"module": "sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js",
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "ListPage/manifest.json",
+			"module": "sap/fin/travel/lib/reuse/ListPage/manifest.json"
+		},
+		{
+			"name": "ListPage/view/ListPage.view.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/ListPage.view.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/BreakoutGlobalActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/OverflowToolbarLayoutData.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/DefaultSmartTableActions.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/DraftAdminDataPopover.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/DraftAdminDataPopover.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Popover.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/SmartFilterBar.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml",
+			"required": [
+				"sap/m/FlexItemData.js",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/SmartTable.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml",
+				"sap/m/Table.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/SmartTableToolbar.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/HorizontalLayout.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/TableColumns.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml",
+			"required": [
+				"sap/m/ColumnListItem.js",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Column.js",
+				"sap/m/Label.js",
+				"sap/m/ObjectMarker.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "ListPage/view/fragments/TitleVariant.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml",
+			"required": [
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml"
+			]
+		},
+		{
+			"name": "controller/Begin-dbg.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/Begin.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/Begin.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/Begin.controller.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/DetailDetail-dbg.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/DetailDetail.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js",
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/Middle-dbg.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/Middle.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/Middle.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/Middle.controller.js",
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/NotFound-dbg.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/NotFound.controller.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/NotFound.controller.js",
+			"module": "sap/fin/travel/lib/reuse/controller/NotFound.controller.js",
+			"required": [
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controls/IconSwitch-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/controls/IconSwitch.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "controls/IconSwitch.control",
+			"designtime": true
+		},
+		{
+			"name": "controls/IconSwitch.css"
+		},
+		{
+			"name": "controls/IconSwitch.js",
+			"module": "sap/fin/travel/lib/reuse/controls/IconSwitch.js",
+			"required": [
+				"sap/ui/core/Control.js",
+				"sap/ui/core/IconPool.js"
+			]
+		},
+		{
+			"name": "controls/IconSwitchRenderer-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Renderer.js"
+			]
+		},
+		{
+			"name": "controls/IconSwitchRenderer.js",
+			"module": "sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js",
+			"required": [
+				"sap/ui/core/Renderer.js"
+			]
+		},
+		{
+			"name": "controls/IconWithNumber-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/controls/IconWithNumber.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/Label.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "controls/IconWithNumber.js",
+			"module": "sap/fin/travel/lib/reuse/controls/IconWithNumber.js",
+			"required": [
+				"sap/m/Label.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "controls/UploadCollectionExtension-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.resources.js",
+				"sap/fin/travel/lib/reuse/library.js",
+				"sap/fin/travel/lib/reuse/util/FileUploadHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/formatters.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controls/UploadCollectionExtension.js",
+			"module": "sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js",
+			"required": [
+				"jquery.sap.global.js",
+				"jquery.sap.resources.js",
+				"sap/fin/travel/lib/reuse/library.js",
+				"sap/fin/travel/lib/reuse/util/FileUploadHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/formatters.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "css/fonts/custom-icons.eot"
+		},
+		{
+			"name": "css/fonts/custom-icons.ttf"
+		},
+		{
+			"name": "css/fonts/custom-icons.woff"
+		},
+		{
+			"name": "css/fonts/custom-icons.woff2"
+		},
+		{
+			"name": "css/travellibreuse.css"
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n.properties",
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_ar.properties",
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_bg.properties",
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_cs.properties",
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_de.properties",
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_en.properties",
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_en_US_sappsd.properties",
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_en_US_saptrc.properties",
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_es.properties",
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_fr.properties",
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_hr.properties",
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_hu.properties",
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_it.properties",
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_iw.properties",
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_ja.properties",
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_no.properties",
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_pl.properties",
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_pt.properties",
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_ro.properties",
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_ru.properties",
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_sh.properties",
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_sk.properties",
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_sl.properties",
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_tr.properties",
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"module": "sap/fin/travel/lib/reuse/i18n/i18n_zh_CN.properties",
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "library-all-dbg.js",
+			"isDebug": true,
+			"merged": true
+		},
+		{
+			"name": "library-all.js",
+			"merged": true
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/library.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/fin/travel/lib/reuse/library-preload.js",
+			"merged": true,
+			"required": [
+				"CryptoJS.js",
+				"jquery.sap.global.js",
+				"jquery.sap.resources.js",
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/f/routing/Router.js",
+				"sap/m/ActionSheet.js",
+				"sap/m/Breadcrumbs.js",
+				"sap/m/Button.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/ComboBox.js",
+				"sap/m/DatePicker.js",
+				"sap/m/DateTimePicker.js",
+				"sap/m/Dialog.js",
+				"sap/m/DialogType.js",
+				"sap/m/DraftIndicator.js",
+				"sap/m/DraftIndicatorState.js",
+				"sap/m/FeedListItem.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/MessagePopover.js",
+				"sap/m/MessagePopoverItem.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/PDFViewer.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/QuickView.js",
+				"sap/m/QuickViewGroup.js",
+				"sap/m/QuickViewGroupElement.js",
+				"sap/m/QuickViewPage.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/m/SelectDialog.js",
+				"sap/m/SelectList.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/BusyIndicator.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/InvisibleText.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/Renderer.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/core/XMLTemplateProcessor.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/message/Message.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/ViewType.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/util/XMLPreprocessor.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/datajs.js",
+				"sap/uxap/BlockBase.js"
+			],
+			"condRequired": [
+				"sap/m/Column.js",
+				"sap/m/IconTabBar.js",
+				"sap/m/IconTabFilter.js",
+				"sap/m/Link.js",
+				"sap/m/ObjectMarker.js",
+				"sap/m/Select.js",
+				"sap/m/Title.js",
+				"sap/ui/core/CustomizingConfiguration.js",
+				"{\u003d ${manifestViewTableColumnsExtension\u003ecellFragmentName}}.fragment.xml",
+				"{\u003d ${manifestViewTableColumnsExtension\u003ecolumnFragmentName}}.fragment.xml"
+			],
+			"included": [
+				"sap/fin/travel/lib/reuse/DetailPage/Component.js",
+				"sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js",
+				"sap/fin/travel/lib/reuse/DetailPage/manifest.json",
+				"sap/fin/travel/lib/reuse/DetailPage/view/DetailPage.view.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionListItem.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/ContactDetails.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/Component.js",
+				"sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js",
+				"sap/fin/travel/lib/reuse/ListPage/manifest.json",
+				"sap/fin/travel/lib/reuse/ListPage/view/ListPage.view.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DraftAdminDataPopover.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml",
+				"sap/fin/travel/lib/reuse/controller/Begin.controller.js",
+				"sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js",
+				"sap/fin/travel/lib/reuse/controller/Middle.controller.js",
+				"sap/fin/travel/lib/reuse/controller/NotFound.controller.js",
+				"sap/fin/travel/lib/reuse/controls/IconSwitch.js",
+				"sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js",
+				"sap/fin/travel/lib/reuse/controls/IconWithNumber.js",
+				"sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js",
+				"sap/fin/travel/lib/reuse/library.js",
+				"sap/fin/travel/lib/reuse/manifest.json",
+				"sap/fin/travel/lib/reuse/model/models.js",
+				"sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js",
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+				"sap/fin/travel/lib/reuse/util/BusyHelper.js",
+				"sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomAction.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/DateFormatter.js",
+				"sap/fin/travel/lib/reuse/util/EventHandler.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutHandler.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/FileUploadHelper.js",
+				"sap/fin/travel/lib/reuse/util/FormatHandler.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShareHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShellUtil.js",
+				"sap/fin/travel/lib/reuse/util/StableIdDefinition.js",
+				"sap/fin/travel/lib/reuse/util/StableIdHelper.js",
+				"sap/fin/travel/lib/reuse/util/StateUtil.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/formatters.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/fin/travel/lib/reuse/view/Begin.view.xml",
+				"sap/fin/travel/lib/reuse/view/DetailDetail.view.xml",
+				"sap/fin/travel/lib/reuse/view/Middle.view.xml",
+				"sap/fin/travel/lib/reuse/view/NotFound.view.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Attachments.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Comments.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Copy.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/DiscardDraftPopover.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js",
+				"sap/fin/travel/lib/reuse/view/fragments/DummyBlock.view.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/ErrorMessage.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/MessagePopover.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Share.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/TripBreak.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/UnsavedChangesDialog.fragment.xml"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"isDebug": true
+		},
+		{
+			"name": "library-preload.json",
+			"module": "sap/fin/travel/lib/reuse/library-preload.json",
+			"merged": true,
+			"required": [
+				"CryptoJS.js",
+				"jquery.sap.global.js",
+				"jquery.sap.resources.js",
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/f/routing/Router.js",
+				"sap/m/ActionSheet.js",
+				"sap/m/Breadcrumbs.js",
+				"sap/m/Button.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/ComboBox.js",
+				"sap/m/DatePicker.js",
+				"sap/m/DateTimePicker.js",
+				"sap/m/Dialog.js",
+				"sap/m/DialogType.js",
+				"sap/m/DraftIndicator.js",
+				"sap/m/DraftIndicatorState.js",
+				"sap/m/FeedListItem.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/MessagePopover.js",
+				"sap/m/MessagePopoverItem.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/PDFViewer.js",
+				"sap/m/PlacementType.js",
+				"sap/m/Popover.js",
+				"sap/m/QuickView.js",
+				"sap/m/QuickViewGroup.js",
+				"sap/m/QuickViewGroupElement.js",
+				"sap/m/QuickViewPage.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/m/SelectDialog.js",
+				"sap/m/SelectList.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/BusyIndicator.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/InvisibleText.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/Renderer.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/core/XMLTemplateProcessor.js",
+				"sap/ui/core/library-preload.json",
+				"sap/ui/core/library.js",
+				"sap/ui/core/message/Message.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/ViewType.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/util/XMLPreprocessor.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/datajs.js",
+				"sap/uxap/BlockBase.js"
+			],
+			"condRequired": [
+				"sap/m/Column.js",
+				"sap/m/IconTabBar.js",
+				"sap/m/IconTabFilter.js",
+				"sap/m/Link.js",
+				"sap/m/ObjectMarker.js",
+				"sap/m/Select.js",
+				"sap/m/Title.js",
+				"sap/ui/core/CustomizingConfiguration.js",
+				"{\u003d ${manifestViewTableColumnsExtension\u003ecellFragmentName}}.fragment.xml",
+				"{\u003d ${manifestViewTableColumnsExtension\u003ecolumnFragmentName}}.fragment.xml"
+			],
+			"included": [
+				"sap/fin/travel/lib/reuse/DetailPage/Component.js",
+				"sap/fin/travel/lib/reuse/DetailPage/controller/DetailPage.controller.js",
+				"sap/fin/travel/lib/reuse/DetailPage/manifest.json",
+				"sap/fin/travel/lib/reuse/DetailPage/view/DetailPage.view.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionListItem.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/ActionSearchFieldItem.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Actions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedDeterminingActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedHeaderActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/AnnotatedInlineActionButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Breadcrumbs.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/CRUDActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/ContactDetails.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DataFieldWithNavigationPath.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultFooterToolbarActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/DefaultHeaderActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLCloseAction.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FCLScreenActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Facet.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FooterToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormAnnotatedActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/FormBreakoutActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderContent.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPoint.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderDataPointContent.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFacet.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderForm.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/HeaderFormDataField.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/IconTabBarWithSmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/PaginatorButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/Sections.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartForm.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartFormDataField.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/SmartTableToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/DetailPage/view/fragments/TableColumns.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/Component.js",
+				"sap/fin/travel/lib/reuse/ListPage/controller/ListPage.controller.js",
+				"sap/fin/travel/lib/reuse/ListPage/manifest.json",
+				"sap/fin/travel/lib/reuse/ListPage/view/ListPage.view.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutGlobalActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/BreakoutSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultCriticalSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DefaultSmartTableActions.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/DraftAdminDataPopover.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartFilterBar.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTable.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/SmartTableToolbar.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/TableColumns.fragment.xml",
+				"sap/fin/travel/lib/reuse/ListPage/view/fragments/TitleVariant.fragment.xml",
+				"sap/fin/travel/lib/reuse/controller/Begin.controller.js",
+				"sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js",
+				"sap/fin/travel/lib/reuse/controller/Middle.controller.js",
+				"sap/fin/travel/lib/reuse/controller/NotFound.controller.js",
+				"sap/fin/travel/lib/reuse/controls/IconSwitch.js",
+				"sap/fin/travel/lib/reuse/controls/IconSwitchRenderer.js",
+				"sap/fin/travel/lib/reuse/controls/IconWithNumber.js",
+				"sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js",
+				"sap/fin/travel/lib/reuse/library.js",
+				"sap/fin/travel/lib/reuse/manifest.json",
+				"sap/fin/travel/lib/reuse/model/models.js",
+				"sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js",
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+				"sap/fin/travel/lib/reuse/util/BusyHelper.js",
+				"sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomAction.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/DateFormatter.js",
+				"sap/fin/travel/lib/reuse/util/EventHandler.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutHandler.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/FileUploadHelper.js",
+				"sap/fin/travel/lib/reuse/util/FormatHandler.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShareHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShellUtil.js",
+				"sap/fin/travel/lib/reuse/util/StableIdDefinition.js",
+				"sap/fin/travel/lib/reuse/util/StableIdHelper.js",
+				"sap/fin/travel/lib/reuse/util/StateUtil.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/formatters.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/fin/travel/lib/reuse/view/Begin.view.xml",
+				"sap/fin/travel/lib/reuse/view/DetailDetail.view.xml",
+				"sap/fin/travel/lib/reuse/view/Middle.view.xml",
+				"sap/fin/travel/lib/reuse/view/NotFound.view.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Attachments.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Comments.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Copy.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/DiscardDraftPopover.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js",
+				"sap/fin/travel/lib/reuse/view/fragments/DummyBlock.view.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/ErrorMessage.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/MessagePopover.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/Share.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/TripBreak.fragment.xml",
+				"sap/fin/travel/lib/reuse/view/fragments/UnsavedChangesDialog.fragment.xml"
+			]
+		},
+		{
+			"name": "library.dependencies.json",
+			"designtime": true
+		},
+		{
+			"name": "library.dependencies.xml",
+			"designtime": true
+		},
+		{
+			"name": "library.js",
+			"module": "sap/fin/travel/lib/reuse/library.js",
+			"required": [
+				"jquery.sap.global.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/fin/travel/lib/reuse/manifest.json"
+		},
+		{
+			"name": "messagebundle.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle.properties",
+			"locale": "",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ar.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_ar.properties",
+			"locale": "ar",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_bg.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_bg.properties",
+			"locale": "bg",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_cs.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_cs.properties",
+			"locale": "cs",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_de.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_de.properties",
+			"locale": "de",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_en.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_en.properties",
+			"locale": "en",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_en_US_sappsd.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_en_US_sappsd.properties",
+			"locale": "en_US_sappsd",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_en_US_saptrc.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_en_US_saptrc.properties",
+			"locale": "en_US_saptrc",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_es.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_es.properties",
+			"locale": "es",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_fr.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_fr.properties",
+			"locale": "fr",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_hr.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_hr.properties",
+			"locale": "hr",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_hu.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_hu.properties",
+			"locale": "hu",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_it.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_it.properties",
+			"locale": "it",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_iw.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_iw.properties",
+			"locale": "iw",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ja.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_ja.properties",
+			"locale": "ja",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_no.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_no.properties",
+			"locale": "no",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_pl.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_pl.properties",
+			"locale": "pl",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_pt.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_pt.properties",
+			"locale": "pt",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ro.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_ro.properties",
+			"locale": "ro",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_ru.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_ru.properties",
+			"locale": "ru",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sh.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_sh.properties",
+			"locale": "sh",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sk.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_sk.properties",
+			"locale": "sk",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_sl.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_sl.properties",
+			"locale": "sl",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_tr.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_tr.properties",
+			"locale": "tr",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "messagebundle_zh_CN.properties",
+			"module": "sap/fin/travel/lib/reuse/messagebundle_zh_CN.properties",
+			"locale": "zh_CN",
+			"raw": "messagebundle.properties"
+		},
+		{
+			"name": "model/models-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/model/models.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/DraftIndicatorState.js",
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "model/models.js",
+			"module": "sap/fin/travel/lib/reuse/model/models.js",
+			"required": [
+				"sap/m/DraftIndicatorState.js",
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "resources.json"
+		},
+		{
+			"name": "themes/base/.theming",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-RTL.css",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-dbg.css",
+			"isDebug": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library-parameters.json",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.css",
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/library.source.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/base/shared.less",
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "themes/sap_belize/.theming",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-RTL.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library-parameters.json",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.css",
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "themes/sap_belize_hcb/.theming",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-RTL.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library-parameters.json",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.css",
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcb/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcb"
+		},
+		{
+			"name": "themes/sap_belize_hcw/.theming",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-RTL.css",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library-parameters.json",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library.css",
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_hcw/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_hcw"
+		},
+		{
+			"name": "themes/sap_belize_plus/.theming",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-RTL.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library-parameters.json",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.css",
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_belize_plus/library.source.less",
+			"designtime": true,
+			"theme": "sap_belize_plus"
+		},
+		{
+			"name": "themes/sap_bluecrystal/.theming",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-RTL.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library-parameters.json",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.css",
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_bluecrystal/library.source.less",
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "themes/sap_hcb/.theming",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-RTL.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-dbg.css",
+			"isDebug": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library-parameters.json",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.css",
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "themes/sap_hcb/library.source.less",
+			"designtime": true,
+			"theme": "sap_hcb"
+		},
+		{
+			"name": "thirdparty/CryptoJS/sha1-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js",
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/CryptoJS/sha1.js",
+			"module": "sap/fin/travel/lib/reuse/thirdparty/CryptoJS/sha1.js"
+		},
+		{
+			"name": "util/ActionUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/ActionUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/PDFViewer.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "util/ActionUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/ActionUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/PDFViewer.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "util/AnnotationHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "util/AnnotationHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "util/AppComponent-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/AppComponent.js",
+			"isDebug": true,
+			"required": [
+				"sap/f/routing/Router.js",
+				"sap/fin/travel/lib/reuse/model/models.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/BusyHelper.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShellUtil.js",
+				"sap/fin/travel/lib/reuse/util/StateUtil.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/model/Context.js"
+			],
+			"condRequired": [
+				"sap/ui/core/CustomizingConfiguration.js"
+			]
+		},
+		{
+			"name": "util/AppComponent.js",
+			"module": "sap/fin/travel/lib/reuse/util/AppComponent.js",
+			"required": [
+				"sap/f/routing/Router.js",
+				"sap/fin/travel/lib/reuse/model/models.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/BusyHelper.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShellUtil.js",
+				"sap/fin/travel/lib/reuse/util/StateUtil.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/model/Context.js"
+			],
+			"condRequired": [
+				"sap/ui/core/CustomizingConfiguration.js"
+			]
+		},
+		{
+			"name": "util/AppContextHandler-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/ui/core/routing/HashChanger.js"
+			]
+		},
+		{
+			"name": "util/AppContextHandler.js",
+			"module": "sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/ui/core/routing/HashChanger.js"
+			]
+		},
+		{
+			"name": "util/AppDescriptorUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/Utils.js"
+			]
+		},
+		{
+			"name": "util/AppDescriptorUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/Utils.js"
+			]
+		},
+		{
+			"name": "util/BaseComponentHandler-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+			"isDebug": true,
+			"required": [
+				"CryptoJS.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+				"sap/fin/travel/lib/reuse/util/EventHandler.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutHandler.js",
+				"sap/fin/travel/lib/reuse/util/FormatHandler.js",
+				"sap/fin/travel/lib/reuse/util/StableIdDefinition.js",
+				"sap/fin/travel/lib/reuse/util/StableIdHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/mvc/ViewType.js"
+			]
+		},
+		{
+			"name": "util/BaseComponentHandler.js",
+			"module": "sap/fin/travel/lib/reuse/util/BaseComponentHandler.js",
+			"required": [
+				"CryptoJS.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+				"sap/fin/travel/lib/reuse/util/EventHandler.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutHandler.js",
+				"sap/fin/travel/lib/reuse/util/FormatHandler.js",
+				"sap/fin/travel/lib/reuse/util/StableIdDefinition.js",
+				"sap/fin/travel/lib/reuse/util/StableIdHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/mvc/ViewType.js"
+			]
+		},
+		{
+			"name": "util/BusyHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/BusyHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/BusyIndicator.js"
+			]
+		},
+		{
+			"name": "util/BusyHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/BusyHelper.js",
+			"required": [
+				"sap/ui/core/BusyIndicator.js"
+			]
+		},
+		{
+			"name": "util/ConfigurationUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/ConfigurationUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/ConfigurationUtil.js"
+		},
+		{
+			"name": "util/ControlUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/ControlUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/m/Table.js"
+			]
+		},
+		{
+			"name": "util/ControlUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/ControlUtil.js",
+			"required": [
+				"sap/m/Table.js"
+			]
+		},
+		{
+			"name": "util/CustomAction-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/CustomAction.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/DateFormatter.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "util/CustomAction.js",
+			"module": "sap/fin/travel/lib/reuse/util/CustomAction.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/DateFormatter.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "util/CustomDataUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/CustomDataUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/CustomDataUtil.js"
+		},
+		{
+			"name": "util/DateFormatter-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/DateFormatter.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/DateFormatter.js",
+			"module": "sap/fin/travel/lib/reuse/util/DateFormatter.js"
+		},
+		{
+			"name": "util/EventHandler-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/EventHandler.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShareHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/PDFViewer.js",
+				"sap/m/PlacementType.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/XMLTemplateProcessor.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/util/XMLPreprocessor.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/EventHandler.js",
+			"module": "sap/fin/travel/lib/reuse/util/EventHandler.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/AppDescriptorUtil.js",
+				"sap/fin/travel/lib/reuse/util/ConfigurationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/ShareHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/PDFViewer.js",
+				"sap/m/PlacementType.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/XMLTemplateProcessor.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/util/XMLPreprocessor.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/FCLayoutHandler-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/FCLayoutHandler.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "util/FCLayoutHandler.js",
+			"module": "sap/fin/travel/lib/reuse/util/FCLayoutHandler.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "util/FCLayoutUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/ShellUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/formatters.js"
+			]
+		},
+		{
+			"name": "util/FCLayoutUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+			"required": [
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/ShellUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/formatters.js"
+			]
+		},
+		{
+			"name": "util/FileUploadHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/FileUploadHelper.js",
+			"isDebug": true,
+			"required": [
+				"jquery.sap.resources.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js"
+			]
+		},
+		{
+			"name": "util/FileUploadHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/FileUploadHelper.js",
+			"required": [
+				"jquery.sap.resources.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js"
+			]
+		},
+		{
+			"name": "util/FormatHandler-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/FormatHandler.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/MessageType.js"
+			]
+		},
+		{
+			"name": "util/FormatHandler.js",
+			"module": "sap/fin/travel/lib/reuse/util/FormatHandler.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/core/MessageType.js"
+			]
+		},
+		{
+			"name": "util/FragmentHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/DialogType.js",
+				"sap/m/FlexBox.js",
+				"sap/m/List.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/FragmentHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/DialogType.js",
+				"sap/m/FlexBox.js",
+				"sap/m/List.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/MessageParser-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/MessageParser.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/MessageParser.js",
+			"module": "sap/fin/travel/lib/reuse/util/MessageParser.js"
+		},
+		{
+			"name": "util/MessageUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/MessageUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/core/message/Message.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/MessageUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/MessageUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppContextHandler.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/core/message/Message.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/NavigationUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/ui/core/routing/HashChanger.js"
+			]
+		},
+		{
+			"name": "util/NavigationUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FCLayoutUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/ui/core/routing/HashChanger.js"
+			]
+		},
+		{
+			"name": "util/ODataModelUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/m/DraftIndicatorState.js",
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "util/ODataModelUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/m/DraftIndicatorState.js",
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "util/PaginatorHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "util/PaginatorHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/PaginatorHelper.js",
+			"required": [
+				"sap/ui/model/Context.js"
+			]
+		},
+		{
+			"name": "util/PersistenceHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/BusyHelper.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/StateUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/m/DraftIndicatorState.js"
+			]
+		},
+		{
+			"name": "util/PersistenceHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/BusyHelper.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/StateUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/m/DraftIndicatorState.js"
+			]
+		},
+		{
+			"name": "util/ShareHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/ShareHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppComponent.js"
+			]
+		},
+		{
+			"name": "util/ShareHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/ShareHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AppComponent.js"
+			]
+		},
+		{
+			"name": "util/ShellUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/ShellUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/formatters.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js"
+			]
+		},
+		{
+			"name": "util/ShellUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/ShellUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/formatters.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js"
+			]
+		},
+		{
+			"name": "util/StableIdDefinition-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/StableIdDefinition.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/StableIdDefinition.js",
+			"module": "sap/fin/travel/lib/reuse/util/StableIdDefinition.js"
+		},
+		{
+			"name": "util/StableIdHelper-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/StableIdHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/StableIdDefinition.js"
+			]
+		},
+		{
+			"name": "util/StableIdHelper.js",
+			"module": "sap/fin/travel/lib/reuse/util/StableIdHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/StableIdDefinition.js"
+			]
+		},
+		{
+			"name": "util/StateUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/StateUtil.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/StateUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/StateUtil.js"
+		},
+		{
+			"name": "util/TravelUtil-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/TravelUtil.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/TravelUtil.js",
+			"module": "sap/fin/travel/lib/reuse/util/TravelUtil.js"
+		},
+		{
+			"name": "util/Utils-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/Utils.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/Utils.js",
+			"module": "sap/fin/travel/lib/reuse/util/Utils.js"
+		},
+		{
+			"name": "util/formatters-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/formatters.js",
+			"isDebug": true
+		},
+		{
+			"name": "util/formatters.js",
+			"module": "sap/fin/travel/lib/reuse/util/formatters.js"
+		},
+		{
+			"name": "util/i18n-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/util/i18n.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/base/Object.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "util/i18n.js",
+			"module": "sap/fin/travel/lib/reuse/util/i18n.js",
+			"required": [
+				"sap/ui/base/Object.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "view/Begin.view.xml",
+			"module": "sap/fin/travel/lib/reuse/view/Begin.view.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/controller/Begin.controller.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/DetailDetail.view.xml",
+			"module": "sap/fin/travel/lib/reuse/view/DetailDetail.view.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/controller/DetailDetail.controller.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/Middle.view.xml",
+			"module": "sap/fin/travel/lib/reuse/view/Middle.view.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/controller/Middle.controller.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/NotFound.view.xml",
+			"module": "sap/fin/travel/lib/reuse/view/NotFound.view.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/controller/NotFound.controller.js",
+				"sap/m/MessagePage.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/fragments/AnnotatedActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/AnnotatedActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml"
+			]
+		},
+		{
+			"name": "view/fragments/AnnotatedCriticalActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml"
+			]
+		},
+		{
+			"name": "view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/AnnotatedCriticalIconActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml"
+			]
+		},
+		{
+			"name": "view/fragments/AnnotatedNeutralActionButtons.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/AnnotatedNeutralActionButtons.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml"
+			]
+		},
+		{
+			"name": "view/fragments/Attachments.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/Attachments.fragment.xml",
+			"required": [
+				"sap/fin/travel/lib/reuse/controls/UploadCollectionExtension.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/Comments.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/Comments.fragment.xml",
+			"required": [
+				"sap/m/FeedListItem.js",
+				"sap/m/List.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "view/fragments/Copy.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/Copy.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/DatePicker.js",
+				"sap/m/Dialog.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/MessageStrip.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js"
+			]
+		},
+		{
+			"name": "view/fragments/DiscardDraftPopover.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/DiscardDraftPopover.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Popover.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/DummyBlock-dbg.js",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js",
+			"isDebug": true,
+			"required": [
+				"sap/uxap/BlockBase.js"
+			]
+		},
+		{
+			"name": "view/fragments/DummyBlock.js",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/DummyBlock.js",
+			"required": [
+				"sap/uxap/BlockBase.js"
+			]
+		},
+		{
+			"name": "view/fragments/DummyBlock.view.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/DummyBlock.view.xml",
+			"required": [
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/fragments/ErrorMessage.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/ErrorMessage.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/HBox.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/MessagePopover.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/MessagePopover.fragment.xml",
+			"required": [
+				"sap/m/MessagePopover.js",
+				"sap/m/MessagePopoverItem.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/Share.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/Share.fragment.xml",
+			"required": [
+				"sap/m/ActionSheet.js",
+				"sap/m/Button.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/ToolbarButton.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/ToolbarButton.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			],
+			"condRequired": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "view/fragments/TripBreak.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/TripBreak.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/DateTimePicker.js",
+				"sap/m/Dialog.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/MessageStrip.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js"
+			]
+		},
+		{
+			"name": "view/fragments/UnsavedChangesDialog.fragment.xml",
+			"module": "sap/fin/travel/lib/reuse/view/fragments/UnsavedChangesDialog.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Fragment.js"
+			]
+		}
+	]
+}

@@ -1,0 +1,94 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View template:require="sap.fin.travel.lib.reuse.util.AnnotationHelper" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap"
+	controllerName="sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.DetailPage
+        @description: This view describes the detail view.
+    -->
+	<template:with path="parameter>/" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.getSubEntityContext" var="detailContext">
+		<uxap:ObjectPageLayout id="detailPage" upperCaseAnchorBar="false" showFooter="{= !${DisplayMode} }">
+			
+			<template:if test="{= ${parameter>/configuration/commandExecution} === true}">
+				<template:then>
+					<!--
+						Dependents for shortcuts
+					-->
+					<uxap:dependents>
+						<core:CommandExecution id="sap.fin.travel.lib.reuse.DetailPage.ShareCommand" command="Share" enabled="true" execute="._eventHandler.onShareActionButtonPress" />
+						<core:CommandExecution id="sap.fin.travel.lib.reuse.DetailPage.EditCommand" command="Edit" enabled="true" execute="._eventHandler.handleEditAction" />
+						<core:CommandExecution id="sap.fin.travel.lib.reuse.DetailPage.ExportCommand" command="Export" enabled="true" execute="._eventHandler.handleExportAction" />
+						<core:CommandExecution id="sap.fin.travel.lib.reuse.DetailPage.SaveCommand" command="Save" enabled="true" execute="._eventHandler.handleSaveAction" />
+						<core:CommandExecution id="sap.fin.travel.lib.reuse.DetailPage.DeleteCommand" command="Delete" enabled="true" execute="._eventHandler.handleDeleteAction" />
+					</uxap:dependents>
+				</template:then>
+			</template:if>
+			
+			<template:with path="entityType>com.sap.vocabularies.UI.v1.HeaderInfo" var="header">
+				<uxap:headerTitle>
+					<template:if test="{= ${parameter>/configuration/objectPageDynamicHeader} === true}">
+						<template:then>
+							<uxap:ObjectPageDynamicHeaderTitle id="travelDetailObjectPageHeader">
+								<uxap:heading>
+									<HBox id="HContainer::{entityType>name}">
+										<FlexBox id="FlexContainer::{entityType>name}" renderType="Bare" wrap="Wrap" justifyContent="SpaceBetween" fitContainer="true" alignItems="Center"
+											class="sapSmartTemplatesObjectPageDynamicPageHeaderTitle sapSmartTemplatesObjectPageDynamicPageHeaderTitleWithoutImage sapSmartTemplatesObjectPageDynamicPageHeaderTitleFlexBox">
+											<VBox id="VContainer::{entityType>name}" class="sapSmartTemplatesObjectPageDynamicPageHeaderTitleFlexBox">
+												<Title id="travel::ObjectPage::ObjectPageDynamicHeaderTitle"
+													text="{parts: [{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value'}, {path: 'entityType>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpandSimpleWithDefault'}"
+													class="sapSmartTemplatesObjectPageDynamicPageHeaderTitleText" wrapping="true"/>
+												<Text id="travel::ObjectPage::ObjectPageDynamicHeaderSubTitle"
+													text="{= ${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value} ? ${path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpandSimple'} : ''}"/>
+											</VBox>
+										</FlexBox>
+									</HBox>
+								</uxap:heading>
+								<uxap:expandedHeading></uxap:expandedHeading>
+								<uxap:snappedHeading></uxap:snappedHeading>
+								<uxap:snappedContent></uxap:snappedContent>
+								<uxap:expandedContent></uxap:expandedContent>
+								<uxap:breadcrumbs>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.Breadcrumbs" type="XML"/>
+								</uxap:breadcrumbs>
+								<uxap:actions>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.Actions" type="XML"/>
+								</uxap:actions>
+								<uxap:navigationActions>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.PaginatorButtons" type="XML"/>
+								</uxap:navigationActions>
+							</uxap:ObjectPageDynamicHeaderTitle>
+						</template:then>
+						<template:else>
+							<uxap:ObjectPageHeader id="travelDetailObjectPageHeader"
+								objectTitle="{parts: [{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Title/Value'}, {path: 'entityType>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpandSimpleWithDefault'}"
+								objectSubtitle="{= ${entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value} ? ${path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/Description/Value', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpandSimple'} : ''}">
+								<uxap:breadcrumbs>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.Breadcrumbs" type="XML"/>
+								</uxap:breadcrumbs>
+								<uxap:actions>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.Actions" type="XML"/>
+								</uxap:actions>
+								<uxap:sideContentButton>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FCLCloseAction" type="XML"/>
+								</uxap:sideContentButton>
+							</uxap:ObjectPageHeader>
+						</template:else>
+					</template:if>
+				</uxap:headerTitle>
+				<uxap:headerContent>
+					<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderContent" type="XML"/>
+				</uxap:headerContent>
+				<uxap:sections>
+					<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.Sections" type="XML"/>
+				</uxap:sections>
+				<uxap:footer>
+					<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FooterToolbar" type="XML"/>
+				</uxap:footer>
+			</template:with>
+		</uxap:ObjectPageLayout>
+	</template:with>
+</mvc:View>

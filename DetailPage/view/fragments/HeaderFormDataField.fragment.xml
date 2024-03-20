@@ -1,0 +1,46 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:sfi="sap.ui.comp.smartfield" xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderFormDataField
+        @description: This fragment describes the header content fields.
+    -->
+	<template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataField'}">
+		<HBox id="HContainer::{entityType>name}::{dataField>Value/Path}::DataField">
+			<sfi:SmartLabel
+				id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataField'}::Label"
+				labelFor="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataField'}::Field"
+				class="sapSmartTemplatesObjectPageHeaderFormLabel sapUiTinyMarginEnd"/>
+			<sfi:SmartField
+				id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::{path: 'dataField>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromDataField'}::Field"
+				contextEditable="false" uomEditable="false" enabled="true" clientSideMandatoryCheck="false"
+				value="{parts: [{path: 'dataField>Value'}, {path: 'entitySet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.formatWithExpand'}"
+				textLabel="{= ${dataField>Label} ? ${path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'} : '' }"
+				class="sapSmartTemplatesObjectPageHeaderFormField" fetchValueListReadOnly="false"></sfi:SmartField>
+		</HBox>
+	</template:if>
+	<template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation'}">
+		<HBox id="HContainer::{entityType>name}::{dataField>Value/Path}::DataFieldForAnnotation">
+			<Label id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Label"
+				text="{= ${dataField>Label} ? ${path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.simplePath'} : '' }"
+				labelFor="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Link"
+				visible="{= ${ApprovernameFc} === 0 ? false : true }" class="sapSmartTemplatesObjectPageHeaderFormLabel sapUiTinyMarginEnd"/>
+			<template:if test="{path: 'entitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.isContactJobTitleAvailable'}">
+				<template:then>
+					<Link id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Link"
+						visible="{= ${ApprovernameFc} === 0 ? false : true }" text="{Approvername}" class="sapSmartTemplatesObjectPageHeaderFormField"
+						press="._eventHandler.onContactDetails"></Link>
+				</template:then>
+				<template:else>
+					<sfi:SmartField
+						id="header::{path: 'headerFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Link"
+						contextEditable="false" uomEditable="false" enabled="true" editable="false" clientSideMandatoryCheck="false" value="{Approvername}"></sfi:SmartField>
+				</template:else>
+			</template:if>
+		</HBox>
+	</template:if>
+</core:FragmentDefinition>

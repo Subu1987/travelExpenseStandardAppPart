@@ -1,0 +1,61 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "controller/ListPage-dbg.controller.js",
+			"isDebug": true
+		},
+		{
+			"name": "controller/ListPage.controller.js"
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "view/ListPage.view.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutCriticalIconSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutCriticalSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutGlobalActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/DefaultCriticalSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/DefaultSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/DraftAdminDataPopover.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartFilterBar.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartTable.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartTableToolbar.fragment.xml"
+		},
+		{
+			"name": "view/fragments/TableColumns.fragment.xml"
+		},
+		{
+			"name": "view/fragments/TitleVariant.fragment.xml"
+		}
+	]
+}

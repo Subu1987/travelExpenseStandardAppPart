@@ -1,0 +1,24 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ResponsivePopover id="{actionEntity>/sourceEntity}::ActionListPopover" placement="VerticalPreferredBottom" showHeader="false"
+		horizontalScrolling="false">
+		<content>
+			<SelectList id="{actionEntity>/sourceEntity}::SelectList" items="{path: 'actionEntity>/targetEntity', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getBindingForPath'}"
+				keyboardNavigationMode="None" selectionChange="._eventHandler.handleCreateCustomAction">
+				<core:Item text="{path: 'actionEntity>/targetName', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getBindingForPath'}"
+					textDirection="Inherit"
+					key="{path: 'actionEntity>/targetName', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getBindingForPath'}">
+					<core:customData>
+						<core:CustomData key="Properties" value="{actionEntity>/targetProperties}"/>
+						<core:CustomData key="Entity" value="{actionEntity>/sourceEntity}"/>
+					</core:customData>
+				</core:Item>
+			</SelectList>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

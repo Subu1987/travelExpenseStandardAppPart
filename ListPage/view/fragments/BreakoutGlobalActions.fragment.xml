@@ -1,0 +1,21 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<template:if test="{= ${tmpEntitySet>EntitySet} === ${parameter>/entitySet} }">
+		<template:repeat list="{tmpEntitySet>Actions}" var="customAction">
+			<template:if test="{= ${customAction>global} === true}">
+				<Button id="{customAction>id}" icon="{customAction>icon}" press="{customAction>press}" type="Transparent"
+					text="{path: 'customAction>text', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}"
+					tooltip="{path: 'customAction>tooltip', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="{customAction>importance}"/>
+					</layoutData>
+				</Button>
+			</template:if>
+		</template:repeat>
+	</template:if>
+</core:FragmentDefinition>

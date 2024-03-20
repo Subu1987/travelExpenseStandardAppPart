@@ -1,0 +1,32 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderContent
+        @description: This fragment describes the detail view's header content.
+    -->
+	<template:with path="entityType>com.sap.vocabularies.UI.v1.HeaderFacets" var="headerFacets">
+		<layout:HorizontalLayout id="HLContainer::{entityType>name}::HeaderFacets" allowWrapping="true">
+			<template:repeat list="{headerFacets>}" var="headerFacet">
+				<layout:VerticalLayout id="VLContainer::{entityType>name}::{headerFacet>ID/String}" class="sapUiMediumMarginEnd">
+					<template:if test="{= ${headerFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0 }">
+						<template:then>
+							<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderFacet" type="XML"/>
+						</template:then>
+						<template:elseif test="{= ${headerFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.CollectionFacet') >= 0 }">
+							<VBox id="VContainer::{entityType>name}::{headerFacet>ID/String}" displayInline="true" class="sapSmartTemplatesObjectPageHeaderCollection">
+								<template:repeat list="{headerFacet>Facets}" var="headerFacet">
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.HeaderFacet" type="XML"/>
+								</template:repeat>
+							</VBox>
+						</template:elseif>
+					</template:if>
+				</layout:VerticalLayout>
+			</template:repeat>
+		</layout:HorizontalLayout>
+	</template:with>
+</core:FragmentDefinition>

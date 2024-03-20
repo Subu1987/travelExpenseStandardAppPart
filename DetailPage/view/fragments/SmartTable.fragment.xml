@@ -1,0 +1,111 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sfi="sap.ui.comp.smartfield" xmlns:st="sap.ui.comp.smarttable" xmlns:layout="sap.ui.layout">
+	<!-- @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartTable @description: This fragment describes the SmartTable. -->
+	<template:with path="listEntitySet>entityType" helper="sap.ui.model.odata.AnnotationHelper.gotoEntityType" var="listEntityType">
+		<template:if
+			test="{parts: [{path: 'detailContext>/'}, {path: 'listEntityType>'}, {path: 'variant>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.updateEntityContext'}">
+			<template:if test="{= ${detailContext>lineItemQualifier} }">
+				<template:then>
+					<template:with path="detailContext>lineItemQualifier" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveMetaModelPath"
+						var="collection">
+						<st:SmartTable
+							id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+							persistencyKey="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+							tableBindingPath="{= ${path: 'groupFacet>AnnotationPath'}.slice(0, ${path: 'groupFacet>AnnotationPath'}.indexOf('/')) }"
+							fitContainer="false" useOnlyOneSolidToolbar="true" enableAutoBinding="true" showRowCount="true"
+							beforeRebindTable="._eventHandler.onBeforeRebindDetailTable" dataReceived="._eventHandler.onDataReceived"
+							useVariantManagement="false" useExportToExcel="false" useTablePersonalisation="true"
+							entitySet="{path: 'listEntitySet>name'}" demandPopin="true"
+							noData="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getNoDataText'}"
+							showFullScreenButton="{= ${parts: [{path: 'parameter>/settings/routeConfig/'}, {path: 'facet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.showFullScreenButton'}}"
+							editable="{parts: [{path: 'listEntityType>Org.OData.Capabilities.V1.UpdateRestrictions/Updatable'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.editable'}">
+							<st:customData>
+								<core:CustomData key="useSmartToggle" value="true"/>
+								<core:CustomData key="useSmartField" value="true"/>
+								<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}'/>
+								<template:if
+									test="{parts: [{path: 'facet>Target/AnnotationPath'}, {path: 'variant>annotationPath'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.hasLineItemQualifier'}">
+									<core:CustomData key="lineItemQualifier"
+										value="{parts: [{path: 'listEntityType>'}, {path: 'variant>annotationPath'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getPresentationVariantVisualisation'}"/>
+								</template:if>
+								<template:with path="listEntityType>com.sap.vocabularies.UI.v1.PresentationVariant" var="defaultVariant">
+									<template:if test="{= ${defaultVariant>SortOrder}}">
+										<core:CustomData key="TemplateSortOrder"
+											value="{path: 'defaultVariant>SortOrder', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSortOrder'}"/>
+									</template:if>
+								</template:with>
+							</st:customData>
+							<st:layoutData>
+								<layout:GridData
+									id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::GridData::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+									span="XL12 L12 M12 S12"/>
+							</st:layoutData>
+							<st:customToolbar>
+								<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartTableToolbar" type="XML"/>
+							</st:customToolbar>
+							<Table
+								id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::responsiveTable::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+								fixedLayout="false" growing="true" growingThreshold="10"
+								mode="{= ${parts: [{path: 'collection>'}, {path: 'listEntitySet>'}, {path: 'variant>editable'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSelectionModeResponsiveTable'}}"
+								selectionChange="._eventHandler.onSelectionChange">
+								<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.TableColumns" type="XML"/>
+							</Table>
+						</st:SmartTable>
+					</template:with>
+				</template:then>
+				<template:else>
+					<template:with path="groupFacet>" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="collection">
+						<st:SmartTable
+							id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+							persistencyKey="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+							tableBindingPath="{= ${path: 'groupFacet>AnnotationPath'}.slice(0, ${path: 'groupFacet>AnnotationPath'}.indexOf('/')) }"
+							fitContainer="false" useOnlyOneSolidToolbar="true" enableAutoBinding="true" showRowCount="true"
+							beforeRebindTable="._eventHandler.onBeforeRebindDetailTable" dataReceived="._eventHandler.onDataReceived"
+							useVariantManagement="false" useExportToExcel="false" useTablePersonalisation="true"
+							entitySet="{path: 'listEntitySet>name'}" demandPopin="true"
+							noData="{path: 'listEntitySet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getNoDataText'}"
+							showFullScreenButton="{= ${parts: [{path: 'parameter>/settings/routeConfig/'}, {path: 'facet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.showFullScreenButton'}}"
+							editable="{path: 'listEntityType>Org.OData.Capabilities.V1.UpdateRestrictions/Updatable', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.editable'}">
+							<st:customData>
+								<core:CustomData key="useSmartToggle" value="true"/>
+								<core:CustomData key="useSmartField" value="true"/>
+								<core:CustomData key="dateFormatSettings" value='\{"UTC":true,"style":"medium"\}'/>
+								<template:if
+									test="{parts: [{path: 'facet>Target/AnnotationPath'}, {path: 'variant>annotationPath'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.hasLineItemQualifier'}">
+									<core:CustomData key="lineItemQualifier"
+										value="{parts: [{path: 'listEntityType>'}, {path: 'variant>annotationPath'}, {path: 'facet>Target/AnnotationPath'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getPresentationVariantVisualisation'}"/>
+								</template:if>
+								<template:with path="listEntityType>com.sap.vocabularies.UI.v1.PresentationVariant" var="defaultVariant">
+									<template:if test="{= ${defaultVariant>SortOrder}}">
+										<core:CustomData key="TemplateSortOrder"
+											value="{path: 'defaultVariant>SortOrder', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSortOrder'}"/>
+									</template:if>
+								</template:with>
+							</st:customData>
+							<st:layoutData>
+								<layout:GridData
+									id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::GridData::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+									span="XL12 L12 M12 S12"/>
+							</st:layoutData>
+							<st:customToolbar>
+								<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.SmartTableToolbar" type="XML"/>
+							</st:customToolbar>
+							<Table
+								id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::responsiveTable::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+								fixedLayout="false" growing="true" growingThreshold="10"
+								mode="{= ${parts: [{path: 'collection>'}, {path: 'listEntitySet>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getSelectionModeResponsiveTable'}}"
+								selectionChange="._eventHandler.onSelectionChange">
+								<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.TableColumns" type="XML"/>
+							</Table>
+						</st:SmartTable>
+					</template:with>
+				</template:else>
+			</template:if>
+		</template:if>
+	</template:with>
+</core:FragmentDefinition>

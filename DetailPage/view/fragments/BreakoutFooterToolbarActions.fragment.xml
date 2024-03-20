@@ -1,0 +1,21 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<template:repeat list="{cabEntitySet>Header/Actions}" var="customAction">
+		<template:if test="{= ${customAction>determining} === true &amp;&amp; ${customAction>Criticality/EnumMember} !== 'com.sap.vocabularies.UI.v1.CriticalityType/Critical' }">
+			<Button id="{customAction>id}" type="{= ${customAction>global} ? 'Emphasized' : 'Transparent'}"
+				text="{path: 'customAction>text', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}"
+				tooltip="{path: 'customAction>tooltip', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}"
+				press=".{= ${customAction>press} }"
+				visible="{parts:[{path: 'customAction>visible'}, {path: 'customAction>bindingExp'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVisibilityByPropertyPath'}">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="{customAction>importance}"/>
+				</layoutData>
+			</Button>
+		</template:if>
+	</template:repeat>
+</core:FragmentDefinition>

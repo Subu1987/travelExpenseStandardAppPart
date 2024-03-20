@@ -1,0 +1,26 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<template:with
+		path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.Listpage.view.fragments.ListPage"
+		var="override">
+		<Button id="{parameter>/defaultButtons/CopyListPage}" text="{i18n>COPY_BUTTON}" tooltip="{i18n>COPY_BUTTON}"
+			press="._eventHandler.handleCopyAction" enabled="false"
+			visible="{parts:[{path: 'parameter>/defaultButtons/CopyListPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+			<customData>
+				<core:CustomData key="ApplicablePath" value="DisplayMode"/>
+			</customData>
+		</Button>
+		<Button id="{parameter>/defaultButtons/DeleteListPage}" text="{i18n>DELETE_BUTTON}" tooltip="{i18n>DELETE_BUTTON}"
+			press="._eventHandler.handleDeleteAction" enabled="false"
+			visible="{parts:[{path: 'parameter>/defaultButtons/DeleteListPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+			<customData>
+				<core:CustomData key="entityName" value="{path: 'header>TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+			</customData>
+		</Button>
+	</template:with>
+</core:FragmentDefinition>

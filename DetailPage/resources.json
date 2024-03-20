@@ -1,0 +1,148 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "Component.js"
+		},
+		{
+			"name": "controller/DetailPage-dbg.controller.js",
+			"isDebug": true
+		},
+		{
+			"name": "controller/DetailPage.controller.js"
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "view/DetailPage.view.xml"
+		},
+		{
+			"name": "view/fragments/ActionListItem.fragment.xml"
+		},
+		{
+			"name": "view/fragments/ActionSearchFieldItem.fragment.xml"
+		},
+		{
+			"name": "view/fragments/Actions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/AnnotatedCriticalDeterminingActionButton.fragment.xml"
+		},
+		{
+			"name": "view/fragments/AnnotatedCriticalHeaderActionButtons.fragment.xml"
+		},
+		{
+			"name": "view/fragments/AnnotatedDeterminingActionButton.fragment.xml"
+		},
+		{
+			"name": "view/fragments/AnnotatedHeaderActionButtons.fragment.xml"
+		},
+		{
+			"name": "view/fragments/AnnotatedInlineActionButton.fragment.xml"
+		},
+		{
+			"name": "view/fragments/Breadcrumbs.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutCriticalFooterToolbarActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutCriticalHeaderActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutCriticalSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutFooterToolbarActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutHeaderActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/BreakoutSmartTableActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/CRUDActionButtons.fragment.xml"
+		},
+		{
+			"name": "view/fragments/ContactDetails.fragment.xml"
+		},
+		{
+			"name": "view/fragments/DataFieldWithNavigationPath.fragment.xml"
+		},
+		{
+			"name": "view/fragments/DefaultFooterToolbarActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/DefaultHeaderActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/FCLCloseAction.fragment.xml"
+		},
+		{
+			"name": "view/fragments/FCLScreenActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/Facet.fragment.xml"
+		},
+		{
+			"name": "view/fragments/FooterToolbar.fragment.xml"
+		},
+		{
+			"name": "view/fragments/FormActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/FormAnnotatedActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/FormBreakoutActions.fragment.xml"
+		},
+		{
+			"name": "view/fragments/HeaderContent.fragment.xml"
+		},
+		{
+			"name": "view/fragments/HeaderDataPoint.fragment.xml"
+		},
+		{
+			"name": "view/fragments/HeaderDataPointContent.fragment.xml"
+		},
+		{
+			"name": "view/fragments/HeaderFacet.fragment.xml"
+		},
+		{
+			"name": "view/fragments/HeaderForm.fragment.xml"
+		},
+		{
+			"name": "view/fragments/HeaderFormDataField.fragment.xml"
+		},
+		{
+			"name": "view/fragments/IconTabBarWithSmartTable.fragment.xml"
+		},
+		{
+			"name": "view/fragments/PaginatorButtons.fragment.xml"
+		},
+		{
+			"name": "view/fragments/Sections.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartForm.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartFormDataField.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartTable.fragment.xml"
+		},
+		{
+			"name": "view/fragments/SmartTableToolbar.fragment.xml"
+		},
+		{
+			"name": "view/fragments/TableColumns.fragment.xml"
+		}
+	]
+}

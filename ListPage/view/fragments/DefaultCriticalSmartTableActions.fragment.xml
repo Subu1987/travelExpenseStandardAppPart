@@ -1,0 +1,26 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<template:with
+		path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.Listpage.view.fragments.ListPage"
+		var="override">
+		<template:if
+			test="{path:'listEntityType>Org.OData.Capabilities.V1.InsertRestrictions', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getEntityCreatable'}">
+			<OverflowToolbarButton id="{parameter>/defaultButtons/AddListPage}" icon="sap-icon://add" text="{i18n>ADD_BUTTON}"
+				tooltip="{i18n>ADD_BUTTON}"
+				visible="{parts:[{path: 'parameter>/defaultButtons/AddListPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}"
+				press="._eventHandler.handleCreateAction" enabled="false">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</OverflowToolbarButton>
+		</template:if>
+		<OverflowToolbarButton id="{parameter>/defaultButtons/ExportListPage}" icon="sap-icon://pdf-attachment" text="{i18n>EXPORT_BUTTON}"
+			tooltip="{i18n>EXPORT_BUTTON}" press="._eventHandler.handleExportAction" enabled="false"
+			visible="{parts:[{path: 'parameter>/defaultButtons/ExportListPage'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}"/>
+	</template:with>
+</core:FragmentDefinition>

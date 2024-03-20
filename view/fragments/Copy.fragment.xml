@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<Dialog xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form" showHeader="false" title="{i18n>TRIP_BREAK_TITLE}" id="copyDialog" stretchOnPhone="true"
+	contentWidth="25rem">
+	<content>
+		<l:VerticalLayout class="sapUiContentPadding" visible="{= ${copyDialogModel>/stripMessage}.length > 0}" width="100%">
+			<l:content>
+				<MessageStrip text="{copyDialogModel>/stripMessage}" type="{copyDialogModel>/stripType}" showIcon="true"></MessageStrip>
+			</l:content>
+		</l:VerticalLayout>
+		<!-- Extension before the copy dialog form -->
+		<core:ExtensionPoint name="topCopyDialog"/>
+		<form:SimpleForm id="copyForm" editable="true" maxContainerCols="2" layout="ResponsiveGridLayout" labelSpanS="3" labelSpanM="3"
+			labelSpanL="3" title="{i18n>COPY_TITLE}">
+			<!-- Start date -->
+			<Label text="{i18n>COPY_DATE}" id="copyDateLabel" width="100%" required="true" labelFor="copyDateInput"/>
+			<DatePicker id="copyDateInput"
+				value="{path:'copyDialogModel>/date', type:'sap.ui.model.type.Date', formatOptions : { style:'medium', UTC: true}}"/>
+			<Label text="{i18n>COPY_REASON}" id="copyReasonLabel" width="100%" required="true" labelFor="copyReasonInput"/>
+			<Input id="copyReasonInput" value="{copyDialogModel>/reason}" maxLength="59"/>
+			<!-- Extension below the trip break creation dialog info -->
+			<core:ExtensionPoint name="belowCopyDialogInfo"/>
+		</form:SimpleForm>
+		<!-- Extension below the trip break creation dialog form -->
+		<core:ExtensionPoint name="belowCopyDialogForm"/>
+	</content>
+	<beginButton>
+		<Button id="submitButton" text="{i18n>POPUP_CONFIRM}" type="Emphasized" press="._eventHandler.handleCopy"/>
+	</beginButton>
+	<endButton>
+		<Button id="cancelButton" text="{i18n>POPUP_CANCEL}" press="._eventHandler.handleCloseCopy"/>
+	</endButton>
+</Dialog>

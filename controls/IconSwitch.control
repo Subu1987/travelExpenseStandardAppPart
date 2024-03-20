@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd" >
+
+    <name>IconSwitch</name>
+    <documentation />
+
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+
+        <property group="Misc" name="icon" type="sap.ui.core/string" defaultValue="" />
+        <property group="Misc" name="visible" type="sap.ui.core/boolean" defaultValue="true" />
+        <property group="Misc" name="enabled" type="sap.ui.core/boolean" defaultValue="true" />
+        <property group="Misc" name="state" type="sap.ui.core/boolean" defaultValue="true" />
+        <property group="Misc" name="activeState" type="sap.ui.core/boolean" defaultValue="true" />
+    </properties>
+    <events>
+         <event name="press">
+            <documentation />
+        </event>
+    </events>
+</control>

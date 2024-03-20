@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'custom-icons';
+    src: url('./fonts/custom-icons.eot');
+    src: url('./fonts/custom-icons.woff2') format('woff2'), url('./fonts/custom-icons.woff') format('woff'), url('./fonts/custom-icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.tecUiContentPaddingLeft {
+    margin-left: 1.5rem;
+}
+
+.tecNoPadding.sapMOH {
+    padding: 0;
+}
+
+.sap-phone .tecPhonePadding {
+    padding: 2rem 1rem;
+}
+
+.TecIconWithNumber {
+    width: 3rem;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.TecIconWithNumber > label {
+    cursor: default !important;
+    color: inherit;
+}
+
+.TecIconWithNumber > label,
+.TecIconWithNumber > span {
+    float: none;
+}

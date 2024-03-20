@@ -1,0 +1,24 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover id="DiscardDraftPopover" placement="{= ${discard>/source} === 'cancel' ? 'PreferredTopOrFlip' : 'PreferredBottomOrFlip'}"
+		showHeader="false" class="sapUiContentPadding">
+		<VBox id="DiscardDraftBox">
+			<Text id="DiscardDraftText" width="16rem" text="{discard>/message}"/>
+			<Button id="DiscardDraftConfirmButton" text="{i18n>DISCARD}" width="100%" press="._eventHandler.closeDiscardPopover">
+				<customData>
+					<core:CustomData key="source" value="{path: 'discard>/source'}"/>
+				</customData>
+				<customData>
+					<core:CustomData key="navObjectPath" value="{path: 'discard>/navObjectPath'}"/>
+				</customData>
+				<customData>
+					<core:CustomData key="parentPath" value="{path: 'discard>/parentPath'}"/>
+				</customData>
+			</Button>
+		</VBox>
+	</Popover>
+</core:FragmentDefinition>

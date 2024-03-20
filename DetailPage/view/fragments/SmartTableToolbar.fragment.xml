@@ -1,0 +1,28 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<OverflowToolbar
+		id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::Toolbar::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"
+		design="Transparent">
+		<ToolbarSpacer
+			id="{path: 'facet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Table::ToolbarSpacer::{path: 'variant>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getVariantKey'}"/>
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.BreakoutSmartTableActions" type="XML"/>
+		</template:repeat>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.view.fragments.AnnotatedActionButtons" type="XML"/>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.CRUDActionButtons" type="XML"/>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.view.fragments.AnnotatedNeutralActionButtons" type="XML"/>
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.BreakoutCriticalSmartTableActions" type="XML"/>
+		</template:repeat>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.view.fragments.AnnotatedCriticalActionButtons" type="XML"/>
+	</OverflowToolbar>
+</core:FragmentDefinition>

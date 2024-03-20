@@ -1,0 +1,53 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<OverflowToolbar id="page::ListReport::owerflow::toolbar" design="Transparent">
+		<ToolbarSpacer id="page::ListReport::owerflow::ToolbarSpacer"/>
+		<layout:HorizontalLayout id="customToolBarActionButtonId" class="customToolBarActionButton">
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.ListPage.controller.ListPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.BreakoutSmartTableActions" type="XML"/>
+		</template:repeat>
+		<template:with path="tableAnnotationPath>" var="collection">
+			<template:with path="entitySet>dummy" var="groupFacet">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.view.fragments.AnnotatedActionButtons" type="XML"/>
+			</template:with>
+		</template:with>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.DefaultSmartTableActions" type="XML"/>
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.ListPage.controller.ListPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.BreakoutCriticalSmartTableActions" type="XML"/>
+		</template:repeat>
+		<template:with path="tableAnnotationPath>" var="collection">
+			<template:with path="entitySet>dummy" var="groupFacet">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.view.fragments.AnnotatedCriticalActionButtons" type="XML"/>
+			</template:with>
+		</template:with>
+		<template:with path="tableAnnotationPath>" var="collection">
+			<template:with path="entitySet>dummy" var="groupFacet">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.view.fragments.AnnotatedCriticalIconActionButtons" type="XML"/>
+			</template:with>
+		</template:with>
+		<template:repeat
+			list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.ListPage.controller.ListPage/sap.ui.generic.app}"
+			var="cabEntitySet">
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.BreakoutCriticalIconSmartTableActions" type="XML"/>
+		</template:repeat>
+		<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.DefaultCriticalSmartTableActions" type="XML"/>
+		</layout:HorizontalLayout>
+		<layout:HorizontalLayout >
+		<OverflowToolbarButton class="travelToolBarButtonSettings" id="travel::ListReport::Sort" icon="sap-icon://sort" text="{i18n>SORT_BUTTON}" tooltip="{i18n>SORT_BUTTON}"
+			press="._eventHandler.handleOnSort"/>
+		<OverflowToolbarButton class="travelToolBarButtonSettings" id="travel::ListReport::Group" icon="sap-icon://group-2" text="{i18n>GROUP_BUTTON}" tooltip="{i18n>GROUP_BUTTON}"
+			press="._eventHandler.handleOnGroup"/>
+		<OverflowToolbarButton class="travelToolBarButtonSettings" id="travel::ListReport::Settings" icon="sap-icon://action-settings" text="{i18n>SETTINGS_BUTTON}"
+			tooltip="{i18n>SETTINGS_BUTTON}" press="._eventHandler.handleOnColumns"/>
+		</layout:HorizontalLayout>
+	</OverflowToolbar>
+</core:FragmentDefinition>

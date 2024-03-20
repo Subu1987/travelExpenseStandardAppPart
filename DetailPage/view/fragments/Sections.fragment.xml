@@ -1,0 +1,107 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap" xmlns:layout="sap.ui.layout">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.Sections
+        @description: This fragment describes the content sections.
+    -->
+	<template:if test="{entityType>com.sap.vocabularies.UI.v1.Facets}">
+		<template:with path="entityType>com.sap.vocabularies.UI.v1.Facets" var="facets">
+			<template:with
+				path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.DetailPage.view.fragments.Sections"
+				var="manifestViewExtensions">
+				<template:repeat list="{facets>}" var="firstLevelFacet">
+					<!-- Before facet -->
+					<template:if
+						test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.extensionPointBeforeFacetExists'}">
+						<uxap:ObjectPageSection
+							id="BeforeFacet::{entitySet>name}::{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromBeforeFacet'}::Section"
+							visible="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter:'sap.fin.travel.lib.reuse.util.AnnotationHelper.shouldDisplayBeforeFacetSection'}"
+							title="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getExtensionPointBeforeFacetTitle'}"
+							titleUppercase="false">
+							<!-- criticality on anchor button can be added in the manifest if needed -->
+							<uxap:subSections>
+								<uxap:ObjectPageSubSection
+									id="BeforeFacet::{entitySet>name}::{path: 'firstLevelFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::SubSection"
+									class="sapSmartTemplatesObjectPageSubSection">
+									<core:ExtensionPoint
+										name="BeforeFacet|{entitySet>name}|{path: 'firstLevelFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}"></core:ExtensionPoint>
+								</uxap:ObjectPageSubSection>
+							</uxap:subSections>
+						</uxap:ObjectPageSection>
+					</template:if>
+					<uxap:ObjectPageSection
+						id="{path: 'firstLevelFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::Section"
+						title="{path: 'firstLevelFacet>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" titleUppercase="false"
+						visible="{path: 'firstLevelFacet>com.sap.vocabularies.UI.v1.Hidden/Path', formatter:'sap.fin.travel.lib.reuse.util.AnnotationHelper.shouldDisplaySection'}">
+						<!--<uxap:customAnchorBarButton>-->
+						<!--	<Button id="{entitySet>name}::{firstLevelFacet>ID/String}::SubSection::Button"-->
+						<!--		text="{path: 'firstLevelFacet>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"-->
+						<!--		icon="{path: 'firstLevelFacet>com.sap.vocabularies.UI.v1.Criticality', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getObjectPageSectionAnchorButtonIconPath'}"-->
+						<!--		iconFirst="false">-->
+						<!--		<customData>-->
+						<!--			<core:CustomData key="criticality"-->
+						<!--				value="{path: 'firstLevelFacet>com.sap.vocabularies.UI.v1.Criticality', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getObjectPageSectionAnchorButtonTypePath'}"-->
+						<!--				writeToDom="true"/>-->
+						<!--		</customData>-->
+						<!--	</Button>-->
+						<!--</uxap:customAnchorBarButton>-->
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection
+								id="{path: 'firstLevelFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}::SubSection"
+								class="sapSmartTemplatesObjectPageSubSection">
+								<template:with path="firstLevelFacet>Facets" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.checkBlockContent" var="blockFacet">
+									<template:with path="blockFacet>" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="blockFacet">
+										<template:if
+											test="{= ${path: 'firstLevelFacet>Target', formatter: 'sap.ui.model.odata.AnnotationHelper.isMultiple'} || ${blockFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0} || ${firstLevelFacet>RecordType}.indexOf('com.sap.vocabularies.UI.v1.ReferenceFacet') >= 0}">
+											<template:then>
+												<uxap:blocks>
+													<!-- Temporarily change sequence with ExtensionPoint until problem with runAsOwner is solved -->
+													<core:ExtensionPoint
+														name="ReplaceFacet|{entitySet>name}|{path: 'firstLevelFacet>', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getStableIdPartFromFacet'}">
+														<template:with path="firstLevelFacet>" var="facet">
+															<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.Facet" type="XML"/>
+														</template:with>
+													</core:ExtensionPoint>
+													<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FormActions" type="XML"/>
+												</uxap:blocks>
+											</template:then>
+										</template:if>
+									</template:with>
+								</template:with>
+								<uxap:actions>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FormBreakoutActions" type="XML"/>
+									<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.FormAnnotatedActions" type="XML"/>
+								</uxap:actions>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<!-- After facets -->
+					<template:if
+						test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.extensionPointAfterFacetExists'}">
+						<template:repeat list="{parameter>/extensionFacets}" var="afterExtensionFacet">
+							<template:if
+								test="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'afterExtensionFacet>name'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.extensionPointAfterFacetCheckExistence'}">
+								<uxap:ObjectPageSection id="AfterFacet::{afterExtensionFacet>stableId}::Section"
+									visible="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'afterExtensionFacet>name'}], formatter:'sap.fin.travel.lib.reuse.util.AnnotationHelper.shouldDisplayAfterFacetSection'}"
+									title="{parts: [{path: 'entitySet>name'}, {path: 'firstLevelFacet>'}, {path: 'manifestViewExtensions>'}, {path: 'afterExtensionFacet>name'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getExtensionPointAfterFacetTitle'}"
+									titleUppercase="false">
+									<!-- criticality on anchor button can be added in the manifest if needed -->
+									<uxap:subSections>
+										<uxap:ObjectPageSubSection id="AfterFacet::{afterExtensionFacet>stableId}::SubSection" class="sapSmartTemplatesObjectPageSubSection">
+											<core:ExtensionPoint name="{afterExtensionFacet>name}"></core:ExtensionPoint>
+										</uxap:ObjectPageSubSection>
+									</uxap:subSections>
+								</uxap:ObjectPageSection>
+							</template:if>
+						</template:repeat>
+					</template:if>
+				</template:repeat>
+			</template:with>
+		</template:with>
+	</template:if>
+</core:FragmentDefinition>

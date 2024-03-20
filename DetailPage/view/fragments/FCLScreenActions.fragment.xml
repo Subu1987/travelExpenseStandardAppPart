@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns:core="sap.ui.core"
+	xmlns:uxap="sap.uxap" xmlns:layout="sap.ui.layout">
+	<!--
+        @name: Name: sap.fin.travel.lib.reuse.DetailPage.view.fragments.FCLScreenActions
+        @description: This fragment describes the detail view action buttons related to flexible column layout.
+    -->
+	<uxap:ObjectPageHeaderActionButton id="fullScreen" text="{i18n>FCL_FULLSCREEN}" hideText="true" importance="High"
+		tooltip="{i18n>FCL_FULLSCREEN}" press="._fclHandler.handleFullScreen"
+		visible="{= ${device>/system/phone} ? false : true &amp;&amp; !${_global>/fcl/isLogicallyFullScreen} &amp;&amp; ( (${view>/level} === 1 &amp;&amp; !${_global>/fcl/columnsVisibility/endColumn}) || (${view>/level} === 2 &amp;&amp; ${_global>/fcl/columnsVisibility/endColumn}) )}"
+		icon="sap-icon://full-screen" type="Transparent"/>
+	<uxap:ObjectPageHeaderActionButton id="exitFullScreen" text="{i18n>FCL_EXIT_FULLSCREEN}" hideText="true" importance="High"
+		tooltip="{i18n>FCL_EXIT_FULLSCREEN}" press="._fclHandler.handleExitFullScreen"
+		visible="{= ${device>/system/phone} ? false : true &amp;&amp; ${_global>/fcl/isLogicallyFullScreen} &amp;&amp;  (${_global>/fclSettings/maxColumnsCount} || 3) > ${view>/level} }" icon="sap-icon://exit-full-screen"
+		type="Transparent"/>
+</core:FragmentDefinition>

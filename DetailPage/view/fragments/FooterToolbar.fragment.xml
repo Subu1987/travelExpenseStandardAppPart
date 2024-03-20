@@ -1,0 +1,67 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<OverflowToolbar id="travelDetailPageFooterToolbar">
+		<Button id="showMessages" text="{= ${message>/}.length }" tooltip="{i18n>MESSAGES_TOOLTIP}" ariaLabelledBy="showMessagesButtonInvisibleText"
+			press="._eventHandler.onShowMessages" type="Emphasized" icon="sap-icon://message-popup"
+			visible="{= ${message>/}.length > 0 &amp;&amp; (${view>/level} === 1 || ${_global>/fcl/isLogicallyFullScreen}) }"/>
+		<core:InvisibleText id="showMessagesButtonInvisibleText" text="{i18n>MESSAGE_BUTTON_TYPE}"/>
+		<customData>
+			<core:CustomData key="ViewLevel" value="{path: 'view>/level'}"/>
+			<core:CustomData key="RefEntity" value="{path: 'parameter>/entitySet'}"/>
+		</customData>
+		<ToolbarSpacer id="{entitySet>name}::FooterToolbar::ToolbarSpacer"/>
+		<DraftIndicator id="draftStatus" state="{_global>/draft}" visible="{= ${view>/level} === 1 || ${_global>/fcl/isLogicallyFullScreen} }"/>
+		<template:with
+			path="parameter>/manifest/sap.ui5/extends/extensions/sap.ui.viewExtensions/sap.fin.travel.lib.reuse.DetailPage.view.fragments.FooterBar"
+			var="override">
+			<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/SaveAndSubmitFooterBar'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<Button id="{parameter>/defaultButtons/SaveAndSubmitFooterBar}" text="{i18n>SUBMIT_BUTTON}" press="._eventHandler.handleSubmitAction"
+					type="Emphasized" visible="{= ${view>/level} === 1}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="High"/>
+					</layoutData>
+					<customData>
+						<core:CustomData key="entityName"
+							value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+					</customData>
+				</Button>
+			</template:if>
+			<template:if
+				test="{parts:[{path: 'parameter>/defaultButtons/ApplyFooterBar'}, {path: 'override>'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getOverrideButtonVisibility'}">
+				<Button id="{parameter>/defaultButtons/ApplyFooterBar}" text="{i18n>APPLY_BUTTON}" press="._eventHandler.handleApplyAction"
+					type="Emphasized" visible="{= ${view>/level} > 1}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="High"/>
+					</layoutData>
+					<customData>
+						<core:CustomData key="entityName"
+							value="{path: 'entityType>com.sap.vocabularies.UI.v1.HeaderInfo/TypeName', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+					</customData>
+				</Button>
+			</template:if>
+			<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.AnnotatedCriticalDeterminingActionButton" type="XML"/>
+			</template:repeat>
+			<template:repeat
+				list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+				var="cabEntitySet">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.BreakoutCriticalFooterToolbarActions" type="XML"/>
+			</template:repeat>
+			<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.DefaultFooterToolbarActions" type="XML"/>
+			<template:repeat
+				list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+				var="cabEntitySet">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.BreakoutFooterToolbarActions" type="XML"/>
+			</template:repeat>
+			<template:repeat list="{entityType>com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.DetailPage.view.fragments.AnnotatedDeterminingActionButton" type="XML"/>
+			</template:repeat>
+		</template:with>
+	</OverflowToolbar>
+</core:FragmentDefinition>

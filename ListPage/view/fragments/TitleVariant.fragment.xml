@@ -1,0 +1,33 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:f="sap.f"
+	xmlns:core="sap.ui.core" xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<f:title>
+		<f:DynamicPageTitle id="page::title">
+			<f:heading>
+				<Text id="template::UserText"></Text>
+			</f:heading>
+			<f:actions>
+				<ToolbarSpacer id="page::title::toolbarspacer"/>
+				<template:repeat
+					list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.ListPage.controller.ListPage/sap.ui.generic.app}"
+					var="tmpEntitySet">
+					<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.BreakoutGlobalActions" type="XML"/>
+				</template:repeat>
+				<OverflowToolbarButton id="travel::Share" icon="sap-icon://action" type="Transparent"
+					visible="{= ${_global>/fcl/columnsVisibility/beginColumn} &amp;&amp; !${_global>/fcl/columnsVisibility/midColumn} }"
+					press="._eventHandler.onShareActionButtonPress" tooltip="{i18n>SHARE_BUTTON}" text="{i18n>SHARE_BUTTON}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="High"/>
+					</layoutData>
+				</OverflowToolbarButton>
+			</f:actions>
+			<f:snappedContent>
+				<Text id="template::FilterText"></Text>
+			</f:snappedContent>
+		</f:DynamicPageTitle>
+	</f:title>
+</core:FragmentDefinition>

@@ -1,0 +1,80 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap">
+	<template:if
+		test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+		<template:if
+			test="{= ${dataField>Inline/Bool} !== 'true' &amp;&amp; ${dataField>Determining/Bool} !== 'true' &amp;&amp; ${dataField>Criticality/EnumMember} === 'com.sap.vocabularies.UI.v1.CriticalityType/Critical'}">
+			<template:then>
+				<template:if
+					test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>Determining/Bool} !== 'true' }">
+					<template:with path="dataField>Action" helper="sap.ui.model.odata.AnnotationHelper.gotoFunctionImport" var="action">
+						<uxap:ObjectPageHeaderActionButton id="{action>name}::{action>entitySet}::Annotation::Critical::Header::Action"
+							text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" press="._eventHandler.handleDataFieldForAction"
+							enabled="true"
+							visible="{path: 'action>sap:applicable-path', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.actionHeaderControl'}"
+							hideText="false"
+							importance="{= ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'High' : 'Medium' }"
+							type="Transparent">
+							<uxap:customData>
+								<core:CustomData key="Type" value="{dataField>RecordType}"/>
+								<template:if test="{= ${dataField>SemanticObject}}">
+									<core:CustomData key="SemanticObject" value="{path: 'dataField>SemanticObject', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+								</template:if>
+								<core:CustomData key="Action" value="{path: 'dataField>Action', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+								<core:CustomData key="Label" value="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+							</uxap:customData>
+						</uxap:ObjectPageHeaderActionButton>
+					</template:with>
+				</template:if>
+			</template:then>
+		</template:if>
+	</template:if>
+	<template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation'}">
+		<template:then>
+			<template:if test="{= ${dataField>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') >= 0}">
+				<template:then>
+					<template:with path="dataField>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="dataFieldTarget">
+						<template:if test="{= ${dataFieldTarget>Data} !== undefined &amp;&amp; Object.keys(${dataFieldTarget>Data}).length > 0 }">
+							<template:repeat list="{dataFieldTarget>Data}" var="dataField">
+								<template:if
+									test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation' || ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+									<template:if
+										test="{= ${dataField>Inline/Bool} !== 'true' &amp;&amp; ${dataField>Determining/Bool} !== 'true' &amp;&amp; ${dataField>Criticality/EnumMember} === 'com.sap.vocabularies.UI.v1.CriticalityType/Critical'}">
+										<template:then>
+											<template:if
+												test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAnnotation' &amp;&amp; ${dataField>Determining/Bool} !== 'true' }">
+												<template:with path="dataField>Action" helper="sap.ui.model.odata.AnnotationHelper.gotoFunctionImport" var="action">
+													<uxap:ObjectPageHeaderActionButton id="{action>name}::{action>entitySet}::Annotation::Critical::Header::Annotation"
+														text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" press="._eventHandler.handleDataFieldForAction"
+														enabled="true"
+														visible="{path: 'action>sap:applicable-path', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.actionHeaderControl'}"
+														hideText="false"
+														importance="{= ${dataField>com.sap.vocabularies.UI.v1.Importance/EnumMember} === 'com.sap.vocabularies.UI.v1.ImportanceType/High' ? 'High' : 'Medium' }"
+														type="Transparent">
+														<uxap:customData>
+															<core:CustomData key="Type" value="{dataField>RecordType}"/>
+															<template:if test="{= ${dataField>SemanticObject}}">
+																<core:CustomData key="SemanticObject" value="{path: 'dataField>SemanticObject', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+															</template:if>
+															<core:CustomData key="Action" value="{path: 'dataField>Action', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+															<core:CustomData key="Label" value="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+														</uxap:customData>
+													</uxap:ObjectPageHeaderActionButton>
+												</template:with>
+											</template:if>
+										</template:then>
+									</template:if>
+								</template:if>
+							</template:repeat>
+						</template:if>
+					</template:with>
+				</template:then>
+			</template:if>
+		</template:then>
+	</template:if>
+</core:FragmentDefinition>

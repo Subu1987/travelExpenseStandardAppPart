@@ -1,0 +1,52 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<template:if test="{= ${firstLevelFacet>Target/AnnotationPath} &amp;&amp; ${firstLevelFacet>Target/AnnotationPath}.indexOf('com.sap.vocabularies.UI.v1.FieldGroup') > -1 }">
+		<template:then>
+			<template:with path="firstLevelFacet>Target" helper="sap.ui.model.odata.AnnotationHelper.resolvePath" var="refFacet">
+				<template:with path="refFacet>" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveIdentification" var="targetEntity">
+					<template:repeat list="{targetEntity>com.sap.vocabularies.UI.v1.Identification}" var="dataField">
+						<template:if
+							test="{= (${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForAction' &amp;&amp; ${dataField>Determining/Bool} === 'true') }">
+							<template:with path="dataField>Action" helper="sap.ui.model.odata.AnnotationHelper.gotoFunctionImport" var="action">
+								<Button
+									id="{parts: [{path: 'action>'}, {path: 'dataField>Criticality'}] , formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.getDataFieldForActionId'}::Form::BreakoutAction"
+									text="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}" type="Transparent"
+									press="._eventHandler.handleDataFieldForAction" enabled="true" visible="true">
+									<customData>
+										<core:CustomData key="Type" value="{dataField>RecordType}"/>
+										<core:CustomData key="Action" value="{path: 'dataField>Action', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+										<core:CustomData key="Label" value="{path: 'dataField>Label', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+										<core:CustomData key="FieldGroupAction" value="{targetEntity>name}"/>
+										<core:CustomData key="InvocationGrouping" value="{= ${dataField>InvocationGrouping/EnumMember}}"/>
+										<template:if test="{= ${dataField>RecordType} === 'com.sap.vocabularies.UI.v1.DataFieldForIntentBasedNavigation'}">
+											<core:CustomData key="SemanticObject" value="{path: 'dataField>SemanticObject', formatter: 'sap.ui.model.odata.AnnotationHelper.format'}"/>
+										</template:if>
+									</customData>
+								</Button>
+							</template:with>
+						</template:if>
+					</template:repeat>
+				</template:with>
+			</template:with>
+		</template:then>
+	</template:if>
+	<template:repeat
+		list="{parameter>/manifest/sap.ui5/extends/extensions/sap.ui.controllerExtensions/sap.fin.travel.lib.reuse.DetailPage.controller.DetailPage/sap.ui.generic.app}"
+		var="tmpEntitySet">
+		<template:repeat list="{tmpEntitySet>Sections}" var="section">
+			<template:if
+				test="{parts: [{path: 'firstLevelFacet>'}, {path: 'section>FacetId'}], formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.containsFormWithBreakoutAction'}">
+				<template:repeat list="{section>Actions}" var="customAction">
+					<Button id="{customAction>id}" type="Transparent" press=".{customAction>press}"
+						text="{path: 'customAction>text', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}"
+						tooltip="{path: 'customAction>tooltip', formatter: 'sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveI18n'}"></Button>
+				</template:repeat>
+			</template:if>
+		</template:repeat>
+	</template:repeat>
+</core:FragmentDefinition>

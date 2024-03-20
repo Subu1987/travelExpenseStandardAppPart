@@ -1,0 +1,19 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<ResponsivePopover placement="VerticalPreferredBottom" showHeader="false">
+		<content>
+			<ActionSheet id="travel::shareList">
+				<buttons>
+					<Button id="shareEmailButton" icon="sap-icon://email" press="onEmailPress" text="{i18n>EMAIL_BUTTON}" class="sapMFlexBox sapSmartTemplateBtnNoPaddingRight" width="100%"/>
+					<footerbar:AddBookmarkButton id="bookmarkButton" text="{i18n>SAVE_AS_TILE_BUTTON}" title="{share>/title}" subtitle="{share>/subtitle}"
+						customUrl="{share>/customUrl}" tileIcon="{share>/icon}" class="sapMFlexBox" width="100%"/>
+				</buttons>
+			</ActionSheet>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

@@ -1,0 +1,23 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover title="{path: 'DraftLinkType', formatter: '._formatHandler.formatDraftLockText'}" showHeader="true" contentWidth="15.625rem"
+		verticalScrolling="false" class="sapUiContentPadding">
+		<endButton>
+			<Button id="Draft::Close::Button" icon="sap-icon://decline" tooltip="{i18n>CLOSE}" press="._eventHandler.closeDraftAdminPopover"/>
+		</endButton>
+		<VBox class="sapUiContentPadding">
+			<VBox visible="{= ${DraftLinkType} === 'UnsavedBy'}">
+				<Text id="Draft::UserId"
+					text="{parts: [{path: 'i18n>UNSAVED_OBJECT_POPOVER_TEXT'}, {path: 'DraftUserId'}], formatter:'._formatHandler.formatText'}"></Text>
+				<VBox class="sapUiSmallMarginTop"></VBox>
+			</VBox>
+			<VBox class="sapUiSmallMarginTop"></VBox>
+			<Text id="Draft::Changed::Date"
+				text="{parts: [{path: 'i18n>DRAFT_OBJECT_POPOVER_CHANGED_AT'}, {path: 'TripChange', type: 'sap.ui.model.type.DateTime'}], formatter:'._formatHandler.formatText'}"></Text>
+		</VBox>
+	</Popover>
+</core:FragmentDefinition>

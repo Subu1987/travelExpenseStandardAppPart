@@ -1,0 +1,9 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View controllerName="sap.fin.travel.lib.reuse.controller.NotFound" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<MessagePage
+		/>
+</mvc:View>

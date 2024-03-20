@@ -1,0 +1,33 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View template:require="sap.fin.travel.lib.reuse.util.AnnotationHelper"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout" xmlns:variants="sap.ui.comp.smartvariants"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="sap.fin.travel.lib.reuse.ListPage.controller.ListPage" height="100%">
+	<template:with path="parameter>/" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.getEntityContext" var="workingContext">
+		<template:with path="entitySet>dummy" var="tabItem">
+			<f:DynamicPage id="page" preserveHeaderStateOnScroll="{= ${device>/system/phone} ? false : true}" fitContent="true">
+				<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.TitleVariant" type="XML"/>
+				<f:header>
+					<f:DynamicPageHeader id="page::header" pinnable="{= ${device>/system/phone} ? false : true}">
+						<f:content>
+							<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.SmartFilterBar" type="XML"/>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+					<template:with path="workingContext>lineItemPath" helper="sap.fin.travel.lib.reuse.util.AnnotationHelper.resolveMetaModelPath"
+						var="tableAnnotationPath">
+						<template:with path="entitySet>dummy" var="variant">
+							<core:Fragment fragmentName="sap.fin.travel.lib.reuse.ListPage.view.fragments.SmartTable" type="XML"/>
+						</template:with>
+					</template:with>
+				</f:content>
+			</f:DynamicPage>
+		</template:with>
+	</template:with>
+</core:View>

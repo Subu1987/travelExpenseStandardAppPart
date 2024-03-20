@@ -1,0 +1,9 @@
+{ "application": "sap.fin.travel.lib.reuse",
+  "version": "2.0.49",
+  "buildNumber": "10",
+  "buildId": "10",
+  "branch": "detached",
+  "revision": "f39f4fbe2e72daf5c477b7db3d5aa410b540b57f",
+  "GitURL": "https://github.tools.sap/FIORI-TRAVEL/fin.travel.lib.reuse.git",
+  "namespace": "sap.fin.travel.lib.reuse"
+}
